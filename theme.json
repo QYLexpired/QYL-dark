@@ -1,0 +1,27 @@
+{
+  "name": "QYL-dark",
+  "author": "QYL",
+  "url": "https://github.com/QYLexpired/QYL-dark",
+  "version": "1.0.0",
+  "displayName": {
+    "default": "QYL-dark",
+    "zh_CN": "QYL-dark",
+    "en_US": "QYL-dark"
+  },
+  "description": {
+    "default": "QYL主题-暗黑",
+    "zh_CN": "QYL主题-暗黑",
+    "en_US": "QYL-dark"
+  },
+  "readme": {
+    "default": "README_zh_CN.md",
+    "zh_CN": "README_zh_CN.md",
+    "en_US": "README.md"
+  },
+  "modes": [
+    "dark"
+  ],
+  "keywords": [
+    "QYL"
+  ]
+}
