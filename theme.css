@@ -13,8 +13,8 @@
     --b3-theme-error: #d23f31;
     --b3-theme-success: #65b84d;
     --b3-theme-notfocus: #6a6a6a;
-    --b3-protyle-inline-mark-color: #343434;
-    --b3-protyle-inline-mark-background: rgba(148, 225, 213, 0.8);/* 标记色 */
+    --b3-protyle-inline-mark-color: #dadada;
+    --b3-protyle-inline-mark-background: rgba(60, 172, 78, 0.8);/* 标记色 */
     --hovercurrent: rgba(117, 117, 117, 0.7);
     --b3-theme-filetree: rgba(84, 84, 84, 0.2);
     --b3-protyle-inline-link-color: rgb(124, 166, 215);
@@ -1382,4 +1382,9 @@ li.b3-list-item.b3-list-item--hide-action[data-subtype="h6"] .b3-list-item__grap
 /* 集市阴影效果 */
 .config-bazaar__panel .b3-card {
     box-shadow: var(--b3-light-shadow);
+}
+
+/* 标记 */
+span[data-type="mark"] {
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0), var(--b3-protyle-inline-mark-background)) !important;
 }
