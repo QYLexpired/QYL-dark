@@ -481,16 +481,16 @@ function enableIndentStyle() {
             --indent-color-active: rgb(from var(--b3-theme-on-background) r g b / .3);
             --indent-color: #0000
         }
-        .file-tree>.fn__flex-1>ul>ul { background-image: linear-gradient(90deg, rgba(0, 0, 0, 0) 0 18px, var(--indent-color) 18px 19.5px, rgba(0, 0, 0, 0) 19.5px 100%) }
-        .file-tree>.fn__flex-1>ul>ul>ul { background-image: linear-gradient(90deg, rgba(0, 0, 0, 0) 0 36px, var(--indent-color) 36px 37.5px, rgba(0, 0, 0, 0) 37.5px 100%) }
-        .file-tree>.fn__flex-1>ul>ul>ul>ul { background-image: linear-gradient(90deg, rgba(0, 0, 0, 0) 0 54px, var(--indent-color) 54px 55.5px, rgba(0, 0, 0, 0) 55.5px 100%) }
-        .file-tree>.fn__flex-1>ul>ul>ul>ul>ul { background-image: linear-gradient(90deg, rgba(0, 0, 0, 0) 0 72px, var(--indent-color) 72px 73.5px, rgba(0, 0, 0, 0) 73.5px 100%) }
-        .file-tree>.fn__flex-1>ul>ul>ul>ul>ul>ul { background-image: linear-gradient(90deg, rgba(0, 0, 0, 0) 0 90px, var(--indent-color) 90px 91.5px, rgba(0, 0, 0, 0) 91.5px 100%) }
-        .file-tree>.fn__flex-1>ul>ul>ul>ul>ul>ul>ul { background-image: linear-gradient(90deg, rgba(0, 0, 0, 0) 0 108px, var(--indent-color) 108px 109.5px, rgba(0, 0, 0, 0) 109.5px 100%) }
-        .file-tree>.fn__flex-1>ul>ul>ul>ul>ul>ul>ul>ul { background-image: linear-gradient(90deg, rgba(0, 0, 0, 0) 0 126px, var(--indent-color) 126px 127.5px, rgba(0, 0, 0, 0) 127.5px 100%) }
+        .file-tree>.fn__flex-1>ul>ul { background-image: linear-gradient(90deg, rgba(0, 0, 0, 0) 0 20px, var(--indent-color) 20px 21.5px, rgba(0, 0, 0, 0) 21.5px 100%) }
+        .file-tree>.fn__flex-1>ul>ul>ul { background-image: linear-gradient(90deg, rgba(0, 0, 0, 0) 0 34px, var(--indent-color) 34px 35.5px, rgba(0, 0, 0, 0) 35.5px 100%) }
+        .file-tree>.fn__flex-1>ul>ul>ul>ul { background-image: linear-gradient(90deg, rgba(0, 0, 0, 0) 0 52px, var(--indent-color) 52px 53.5px, rgba(0, 0, 0, 0) 53.5px 100%) }
+        .file-tree>.fn__flex-1>ul>ul>ul>ul>ul { background-image: linear-gradient(90deg, rgba(0, 0, 0, 0) 0 70px, var(--indent-color) 70px 71.5px, rgba(0, 0, 0, 0) 71.5px 100%) }
+        .file-tree>.fn__flex-1>ul>ul>ul>ul>ul>ul { background-image: linear-gradient(90deg, rgba(0, 0, 0, 0) 0 88px, var(--indent-color) 88px 89.5px, rgba(0, 0, 0, 0) 89.5px 100%) }
+        .file-tree>.fn__flex-1>ul>ul>ul>ul>ul>ul>ul { background-image: linear-gradient(90deg, rgba(0, 0, 0, 0) 0 106px, var(--indent-color) 106px 107.5px, rgba(0, 0, 0, 0) 107.5px 100%) }
+        .file-tree>.fn__flex-1>ul>ul>ul>ul>ul>ul>ul>ul { background-image: linear-gradient(90deg, rgba(0, 0, 0, 0) 0 124px, var(--indent-color) 124px 125.5px, rgba(0, 0, 0, 0) 125.5px 100%) }
         .file-tree>.fn__flex-1>ul ul { transition-duration: .2s; transition-property: --indent-color,height }
         .file-tree>.fn__flex-1>ul ul,.file-tree>.fn__flex-1 li.b3-list-item--focus+ul,.file-tree>.fn__flex-1 ul.has-focus { --indent-color: var(--b3-theme-background-light) }
-        .file-tree>.fn__flex-1 li.b3-list-item--focus+ul,.file-tree>.fn__flex-1:hover ul.has-focus { --indent-color: var(--b3-theme-primary) }
+        .file-tree>.fn__flex-1 li.b3-list-item--focus+ul,.file-tree>.fn__flex-1:hover ul.has-focus { --indent-color: rgb(183, 196, 255) }
     `;
 }
 
@@ -626,166 +626,88 @@ function enablecolorfulfiletree() {
         document.head.appendChild(styleSheet);
     }
     styleSheet.innerText = `
-        [data-type="navigation-root"] {
-    margin-left: 25px;
-    margin-top: 8px !important;  
-}
-[data-type="navigation-file"] {
-    margin-left: 25px;
-}
-[data-type="navigation-root"]::before {
-    content: "";
-    width: 12px;
-    height: 28px;
-    position: absolute;
-    left: -20px;
-    border-top-left-radius: 6px;
-    border-bottom-left-radius: 6px;
-}
-.b3-list:nth-of-type(8n+1)>[data-type="navigation-root"]::before {
-    background-color: rgb(101, 149, 238) !important;
-}
-div.sy__file ul:not(ul ul):not(ul.b3-list.fn__flex-column):nth-of-type(8n+1) {
-    position: relative;
-}
-div.sy__file ul:not(ul ul):not(ul.b3-list.fn__flex-column):nth-of-type(8n+1)::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 17px;
-    height: 100%;
-    width: 3px;
-    background-color: rgb(101, 149, 238);
-}
-.b3-list:nth-of-type(8n+1)>[data-type="navigation-root"] {
-    background-color:rgb(91, 113, 154) !important;
-}
-.b3-list:nth-of-type(8n+2)>[data-type="navigation-root"]::before {
-    background-color:rgb(228, 184, 38) !important;
-}
-div.sy__file ul:not(ul ul):not(ul.b3-list.fn__flex-column):nth-of-type(8n+2) {
-    position: relative;
-}
-div.sy__file ul:not(ul ul):not(ul.b3-list.fn__flex-column):nth-of-type(8n+2)::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 17px;
-    height: 100%;
-    width: 3px;
-    background-color: rgb(228, 184, 38);
-}
-.b3-list:nth-of-type(8n+2)>[data-type="navigation-root"] {
-    background-color: rgb(188, 162, 75) !important;
-}
-.b3-list:nth-of-type(8n+3)>[data-type="navigation-root"]::before {
-    background-color:rgb(211, 70, 54) !important;
-}
-div.sy__file ul:not(ul ul):not(ul.b3-list.fn__flex-column):nth-of-type(8n+3) {
-    position: relative;
-}
-div.sy__file ul:not(ul ul):not(ul.b3-list.fn__flex-column):nth-of-type(8n+3)::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 17px;
-    height: 100%;
-    width: 3px;
-    background-color: rgb(211, 70, 54);
-}
-.b3-list:nth-of-type(8n+3)>[data-type="navigation-root"] {
-    background-color: rgb(195, 114, 105) !important;
-}
-.b3-list:nth-of-type(8n+4)>[data-type="navigation-root"]::before {
-    background-color:rgb(80, 159, 60) !important;
-}
-div.sy__file ul:not(ul ul):not(ul.b3-list.fn__flex-column):nth-of-type(8n+4) {
-    position: relative;
-}
-div.sy__file ul:not(ul ul):not(ul.b3-list.fn__flex-column):nth-of-type(8n+4)::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 17px;
-    height: 100%;
-    width: 3px;
-    background-color: rgb(80, 159, 60);
-}
-.b3-list:nth-of-type(8n+4)>[data-type="navigation-root"] {
-    background-color: rgb(97, 145, 85) !important;
-}
-.b3-list:nth-of-type(8n+5)>[data-type="navigation-root"]::before {
-    background-color:rgb(154, 75, 183) !important;
-}
-div.sy__file ul:not(ul ul):not(ul.b3-list.fn__flex-column):nth-of-type(8n+5) {
-    position: relative;
-}
-div.sy__file ul:not(ul ul):not(ul.b3-list.fn__flex-column):nth-of-type(8n+5)::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 17px;
-    height: 100%;
-    width: 3px;
-    background-color:rgb(154, 75, 183);
-}
-.b3-list:nth-of-type(8n+5)>[data-type="navigation-root"] {
-    background-color: rgb(157, 103, 177) !important;
-}
-.b3-list:nth-of-type(8n+6)>[data-type="navigation-root"]::before {
-    background-color:rgb(33, 152, 145) !important;
-}
-div.sy__file ul:not(ul ul):not(ul.b3-list.fn__flex-column):nth-of-type(8n+6) {
-    position: relative;
-}
-div.sy__file ul:not(ul ul):not(ul.b3-list.fn__flex-column):nth-of-type(8n+6)::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 17px;
-    height: 100%;
-    width: 3px;
-    background-color:rgb(33, 152, 145);
-}
-.b3-list:nth-of-type(8n+6)>[data-type="navigation-root"] {
-    background-color: rgb(75, 137, 133) !important;
-}
-.b3-list:nth-of-type(8n+7)>[data-type="navigation-root"]::before {
-    background-color:rgb(180, 42, 115) !important;
-}
-div.sy__file ul:not(ul ul):not(ul.b3-list.fn__flex-column):nth-of-type(8n+7) {
-    position: relative;
-}
-div.sy__file ul:not(ul ul):not(ul.b3-list.fn__flex-column):nth-of-type(8n+7)::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 17px;
-    height: 100%;
-    width: 3px;
-    background-color: rgb(180, 42, 115);
-}
-.b3-list:nth-of-type(8n+7)>[data-type="navigation-root"] {
-    background-color: rgb(141, 86, 115) !important;
-}
-.b3-list:nth-of-type(8n)>[data-type="navigation-root"]::before {
-    background-color:rgb(176, 95, 28) !important;
-}
-div.sy__file ul:not(ul ul):not(ul.b3-list.fn__flex-column):nth-of-type(8n) {
-    position: relative;
-}
-div.sy__file ul:not(ul ul):not(ul.b3-list.fn__flex-column):nth-of-type(8n)::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 17px;
-    height: 100%;
-    width: 3px;
-    background-color:rgb(176, 95, 28);
-}
-.b3-list:nth-of-type(8n)>[data-type="navigation-root"] {
-    background-color:rgb(167, 117, 76) !important;
-}
+        .fn__flex-1.fn__flex-column.file-tree.sy__file ul.b3-list.b3-list--background { margin-left: 20px; }
+        [data-type="navigation-root"]::before {
+            content: "";
+            width: 12px;
+            height: 28px;
+            position: absolute;
+            left: -20px;
+            border-top-left-radius: 6px;
+            border-bottom-left-radius: 6px;
+        }
+        .b3-list:nth-of-type(8n+1)>[data-type="navigation-root"]::before {
+            background-color: rgb(101, 149, 238) !important;
+        }
+        div.sy__file ul:not(ul ul):not(ul.b3-list.fn__flex-column):nth-of-type(8n+1) {
+            border-left: 3px solid rgb(101, 149, 238);
+        }
+        .b3-list:nth-of-type(8n+1)>[data-type="navigation-root"] {
+            background-color:rgb(91, 113, 154) !important;
+        }
+        .b3-list:nth-of-type(8n+2)>[data-type="navigation-root"]::before {
+            background-color:rgb(228, 184, 38) !important;
+        }
+        div.sy__file ul:not(ul ul):not(ul.b3-list.fn__flex-column):nth-of-type(8n+2) {
+            border-left: 3px solid rgb(228, 184, 38);
+        }
+        .b3-list:nth-of-type(8n+2)>[data-type="navigation-root"] {
+            background-color: rgb(157, 130, 40) !important;
+        }
+        .b3-list:nth-of-type(8n+3)>[data-type="navigation-root"]::before {
+            background-color:rgb(211, 70, 54) !important;
+        }
+        div.sy__file ul:not(ul ul):not(ul.b3-list.fn__flex-column):nth-of-type(8n+3) {
+            border-left: 3px solid rgb(211, 70, 54);
+        }
+        .b3-list:nth-of-type(8n+3)>[data-type="navigation-root"] {
+            background-color: rgb(195, 114, 105) !important;
+        }
+        .b3-list:nth-of-type(8n+4)>[data-type="navigation-root"]::before {
+            background-color:rgb(80, 159, 60) !important;
+        }
+        div.sy__file ul:not(ul ul):not(ul.b3-list.fn__flex-column):nth-of-type(8n+4) {
+            border-left: 3px solid rgb(80, 159, 60);
+        }
+        .b3-list:nth-of-type(8n+4)>[data-type="navigation-root"] {
+            background-color: rgb(97, 145, 85) !important;
+        }
+        .b3-list:nth-of-type(8n+5)>[data-type="navigation-root"]::before {
+            background-color:rgb(154, 75, 183) !important;
+        }
+        div.sy__file ul:not(ul ul):not(ul.b3-list.fn__flex-column):nth-of-type(8n+5) {
+            border-left: 3px solid rgb(154, 75, 183);
+        }
+        .b3-list:nth-of-type(8n+5)>[data-type="navigation-root"] {
+            background-color: rgb(157, 103, 177) !important;
+        }
+        .b3-list:nth-of-type(8n+6)>[data-type="navigation-root"]::before {
+            background-color:rgb(33, 152, 145) !important;
+        }
+        div.sy__file ul:not(ul ul):not(ul.b3-list.fn__flex-column):nth-of-type(8n+6) {
+            border-left: 3px solid rgb(33, 152, 145);
+        }
+        .b3-list:nth-of-type(8n+6)>[data-type="navigation-root"] {
+            background-color: rgb(75, 137, 133) !important;
+        }
+        .b3-list:nth-of-type(8n+7)>[data-type="navigation-root"]::before {
+            background-color:rgb(180, 42, 115) !important;
+        }
+        div.sy__file ul:not(ul ul):not(ul.b3-list.fn__flex-column):nth-of-type(8n+7) {
+            border-left: 3px solid rgb(180, 42, 115);
+        }
+        .b3-list:nth-of-type(8n+7)>[data-type="navigation-root"] {
+            background-color: rgb(141, 86, 115) !important;
+        }
+        .b3-list:nth-of-type(8n)>[data-type="navigation-root"]::before {
+            background-color:rgb(176, 95, 28) !important;
+        }
+        div.sy__file ul:not(ul ul):not(ul.b3-list.fn__flex-column):nth-of-type(8n) {
+            border-left: 3px solid rgb(176, 95, 28);
+        }
+        .b3-list:nth-of-type(8n)>[data-type="navigation-root"] {
+            background-color:rgb(167, 117, 76) !important;
+        }
     `;
 }
 
