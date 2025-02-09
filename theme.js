@@ -548,7 +548,7 @@ function enablehoverblockremind() {
     styleSheet.innerText = `
         .p:hover {
             box-shadow: 2px 2px 6px rgba(255, 255, 255, 0.15), -2px -2px 6px rgba(255, 255, 255, 0.15), 0 0 12px rgba(255, 255, 255, 0.1) !important;
-            transition: background-color 0.5s ease-out, box-shadow 0.5s ease-out !important;
+            transition: 0.3s !important;
         }
     `;
 }
@@ -572,7 +572,7 @@ function enablesbremind() {
     styleSheet.innerText = `
         .sb:hover {
             box-shadow: 2px 2px 6px rgba(255, 255, 255, 0.15), -2px -2px 6px rgba(255, 255, 255, 0.15), 0 0 12px rgba(255, 255, 255, 0.1) !important;
-            transition: background-color 0.5s ease-out, box-shadow 0.5s ease-out !important;
+            transition: 0.3s !important;
         }
     `;
 }
