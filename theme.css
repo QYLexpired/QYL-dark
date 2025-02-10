@@ -15,11 +15,14 @@
     --b3-theme-notfocus: #6a6a6a;
     --b3-protyle-inline-mark-color: #dadada;
     --b3-protyle-inline-mark-background: rgba(60, 172, 78, 0.8);/* 标记色 */
-    --hovercurrent: rgba(117, 117, 117, 0.7);
+    --hovercurrent: rgba(131, 129, 255, 0.5);
     --b3-theme-filetree: rgba(84, 84, 84, 0.2);
     --b3-protyle-inline-link-color: rgb(124, 166, 215);
     --b3-protyle-inline-blockref-color: rgb(180, 149, 195);
     --b3-protyle-inline-fileref-color: rgb(122, 175, 122);
+    --b3-list-icon-hover: rgba(85, 121, 200, 0.5);
+    --b3-toolbar-hover: rgba(85, 121, 200, 0.5);
+    --b3-theme-background-light: rgba(85, 121, 200, 0.5);
 
     /* 文字颜色 */
     --b3-theme-on-primary: #fff;
@@ -217,11 +220,11 @@ th,td {
     background-color: var(--hovercurrent);
 }
 .item.item--focus {
-    background-color: var(--hovercurrent);
+    background-color: rgba(87, 112, 255, 0.5);
     border-radius: var(--b3-border-radius);
 }
 .item.item--focus:hover {
-    background-color: var(--hovercurrent);
+    background-color: rgba(87, 112, 255, 0.7);
 }
 .layout__wnd--active .layout-tab-bar .item:after, .layout-tab-bar .item--full.item--focus::after, .layout-tab-bar .item--focus::after {
     display:none;
@@ -1237,9 +1240,9 @@ li.b3-list-item.b3-list-item--hide-action[data-subtype="h6"] .b3-list-item__grap
 }
 .protyle-wysiwyg [custom-style="警告"],
 .protyle-wysiwyg [data-node-id][custom-style="警告"] {
-    background-color: rgba(210, 62, 49, 0.2);
-    border: 3px solid rgb(186, 58, 58);
-    border-top: 30px solid rgb(186, 58, 58);
+    background-color: rgba(255, 48, 48, 0.2);
+    border: 3px solid rgba(255, 48, 48, 0.5);
+    border-top: 30px solid rgba(255, 48, 48, 0.5);
     padding: 5px 8px !important;
 }
 .protyle-wysiwyg [custom-style="警告"]::before,
@@ -1254,9 +1257,9 @@ li.b3-list-item.b3-list-item--hide-action[data-subtype="h6"] .b3-list-item__grap
 }
 .protyle-wysiwyg [custom-style="重要"],
 .protyle-wysiwyg [data-node-id][custom-style="重要"] {
-    background-color: rgba(139, 76, 158, 0.2);
-    border: 3px solid rgb(121, 62, 139);
-    border-top: 30px solid rgb(121, 62, 139);
+    background-color: rgba(157, 34, 194, 0.2);
+    border: 3px solid rgba(157, 34, 194, 0.5);
+    border-top: 30px solid rgba(157, 34, 194, 0.5);
     padding: 5px 8px !important;
 }
 .protyle-wysiwyg [custom-style="重要"]::before,
@@ -1271,9 +1274,9 @@ li.b3-list-item.b3-list-item--hide-action[data-subtype="h6"] .b3-list-item__grap
 }
 .protyle-wysiwyg [custom-style="待办"],
 .protyle-wysiwyg [data-node-id][custom-style="待办"] {
-    background-color: rgba(61, 90, 169, 0.2);
-    border: 3px solid rgb(59, 85, 155);
-    border-top: 30px solid rgb(59, 85, 155);
+    background-color: rgba(40, 80, 190, 0.2);
+    border: 3px solid rgba(40, 80, 190, 0.5);
+    border-top: 30px solid rgba(40, 80, 190, 0.5);
     padding: 5px 8px !important;
 }
 .protyle-wysiwyg [custom-style="待办"]::before,
@@ -1288,9 +1291,9 @@ li.b3-list-item.b3-list-item--hide-action[data-subtype="h6"] .b3-list-item__grap
 }
 .protyle-wysiwyg [custom-style="完成"],
 .protyle-wysiwyg [data-node-id][custom-style="完成"] {
-    background-color: rgba(61, 169, 95, 0.2);
-    border: 3px solid rgb(61, 135, 84);
-    border-top: 30px solid rgb(61, 135, 84);
+    background-color: rgba(14, 188, 69, 0.2);
+    border: 3px solid rgba(14, 188, 69, 0.5);
+    border-top: 30px solid rgba(14, 188, 69, 0.5);
     padding: 5px 8px !important;
 }
 .protyle-wysiwyg [custom-style="完成"]::before,
@@ -1305,9 +1308,9 @@ li.b3-list-item.b3-list-item--hide-action[data-subtype="h6"] .b3-list-item__grap
 }
 .protyle-wysiwyg [custom-style="引用"],
 .protyle-wysiwyg [data-node-id][custom-style="引用"] {
-    background-color: rgba(184, 184, 184, 0.2);
-    border: 3px solid rgb(117, 117, 117);
-    border-top: 30px solid rgb(117, 117, 117);
+    background-color: rgba(165, 165, 165, 0.2);
+    border: 3px solid rgba(165, 165, 165, 0.5);
+    border-top: 30px solid rgba(165, 165, 165, 0.5);
     padding: 5px 8px !important;
 }
 .protyle-wysiwyg [custom-style="引用"]::before,
@@ -1322,9 +1325,9 @@ li.b3-list-item.b3-list-item--hide-action[data-subtype="h6"] .b3-list-item__grap
 }
 .protyle-wysiwyg [custom-style="信息"],
 .protyle-wysiwyg [data-node-id][custom-style="信息"] {
-    background-color: rgba(98, 190, 220, 0.2);
-    border: 3px solid rgb(74, 158, 186);
-    border-top: 30px solid rgb(74, 158, 186);
+    background-color: rgba(44, 202, 255, 0.2);
+    border: 3px solid rgba(44, 202, 255, 0.5);
+    border-top: 30px solid rgba(44, 202, 255, 0.5);
     padding: 5px 8px !important;
 }
 .protyle-wysiwyg [custom-style="信息"]::before,
@@ -1339,9 +1342,9 @@ li.b3-list-item.b3-list-item--hide-action[data-subtype="h6"] .b3-list-item__grap
 }
 .protyle-wysiwyg [custom-style="灵感"],
 .protyle-wysiwyg [data-node-id][custom-style="灵感"] {
-    background-color: rgba(237, 143, 67, 0.2);
-    border: 3px solid rgb(188, 124, 72);
-    border-top: 30px solid rgb(188, 124, 72);
+    background-color: rgba(224, 77, 37, 0.2);
+    border: 3px solid rgba(224, 77, 37, 0.5);
+    border-top: 30px solid rgba(224, 77, 37, 0.5);
     padding: 5px 8px !important;
 }
 .protyle-wysiwyg [custom-style="灵感"]::before,
@@ -1356,9 +1359,9 @@ li.b3-list-item.b3-list-item--hide-action[data-subtype="h6"] .b3-list-item__grap
 }
 .protyle-wysiwyg [custom-style="批注"],
 .protyle-wysiwyg [data-node-id][custom-style="批注"] {
-    background-color: rgba(57, 57, 57, 0.2);
-    border: 3px solid rgb(57, 57, 57);
-    border-top: 30px solid rgb(57, 57, 57);
+    background-color: rgba(56, 53, 53, 0.2);
+    border: 3px solid rgb(56, 53, 53);
+    border-top: 30px solid rgb(56, 53, 53);
     padding: 5px 8px !important;
 }
 .protyle-wysiwyg [custom-style="批注"]::before,

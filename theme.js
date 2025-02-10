@@ -637,22 +637,22 @@ function enablecolorfulfiletree() {
             border-bottom-left-radius: 6px;
         }
         .b3-list:nth-of-type(8n+1)>[data-type="navigation-root"]::before {
-            background-color: rgb(101, 149, 238) !important;
+            background-color: #3573f0 !important;
         }
         div.sy__file ul:not(ul ul):not(ul.b3-list.fn__flex-column):nth-of-type(8n+1) {
-            border-left: 3px solid rgb(101, 149, 238);
+            border-left: 3px solid #3573f0;
         }
         .b3-list:nth-of-type(8n+1)>[data-type="navigation-root"] {
-            background-color:rgb(91, 113, 154) !important;
+            background-color:rgba(53, 115, 240, 0.5) !important;
         }
         .b3-list:nth-of-type(8n+2)>[data-type="navigation-root"]::before {
-            background-color:rgb(228, 184, 38) !important;
+            background-color:rgb(220, 172, 14) !important;
         }
         div.sy__file ul:not(ul ul):not(ul.b3-list.fn__flex-column):nth-of-type(8n+2) {
-            border-left: 3px solid rgb(228, 184, 38);
+            border-left: 3px solid rgb(220, 172, 14);
         }
         .b3-list:nth-of-type(8n+2)>[data-type="navigation-root"] {
-            background-color: rgb(157, 130, 40) !important;
+            background-color: rgba(220, 172, 14, 0.5) !important;
         }
         .b3-list:nth-of-type(8n+3)>[data-type="navigation-root"]::before {
             background-color:rgb(211, 70, 54) !important;
@@ -661,7 +661,7 @@ function enablecolorfulfiletree() {
             border-left: 3px solid rgb(211, 70, 54);
         }
         .b3-list:nth-of-type(8n+3)>[data-type="navigation-root"] {
-            background-color: rgb(195, 114, 105) !important;
+            background-color: rgba(211, 70, 54, 0.5) !important;
         }
         .b3-list:nth-of-type(8n+4)>[data-type="navigation-root"]::before {
             background-color:rgb(80, 159, 60) !important;
@@ -670,7 +670,7 @@ function enablecolorfulfiletree() {
             border-left: 3px solid rgb(80, 159, 60);
         }
         .b3-list:nth-of-type(8n+4)>[data-type="navigation-root"] {
-            background-color: rgb(97, 145, 85) !important;
+            background-color: rgba(80, 159, 60, 0.5) !important;
         }
         .b3-list:nth-of-type(8n+5)>[data-type="navigation-root"]::before {
             background-color:rgb(154, 75, 183) !important;
@@ -679,7 +679,7 @@ function enablecolorfulfiletree() {
             border-left: 3px solid rgb(154, 75, 183);
         }
         .b3-list:nth-of-type(8n+5)>[data-type="navigation-root"] {
-            background-color: rgb(157, 103, 177) !important;
+            background-color: rgba(157, 103, 177, 0.5)!important;
         }
         .b3-list:nth-of-type(8n+6)>[data-type="navigation-root"]::before {
             background-color:rgb(33, 152, 145) !important;
@@ -688,7 +688,7 @@ function enablecolorfulfiletree() {
             border-left: 3px solid rgb(33, 152, 145);
         }
         .b3-list:nth-of-type(8n+6)>[data-type="navigation-root"] {
-            background-color: rgb(75, 137, 133) !important;
+            background-color: rgba(33, 152, 144, 0.5) !important;
         }
         .b3-list:nth-of-type(8n+7)>[data-type="navigation-root"]::before {
             background-color:rgb(180, 42, 115) !important;
@@ -697,7 +697,7 @@ function enablecolorfulfiletree() {
             border-left: 3px solid rgb(180, 42, 115);
         }
         .b3-list:nth-of-type(8n+7)>[data-type="navigation-root"] {
-            background-color: rgb(141, 86, 115) !important;
+            background-color: rgba(180, 42, 116, 0.5) !important;
         }
         .b3-list:nth-of-type(8n)>[data-type="navigation-root"]::before {
             background-color:rgb(176, 95, 28) !important;
@@ -706,7 +706,7 @@ function enablecolorfulfiletree() {
             border-left: 3px solid rgb(176, 95, 28);
         }
         .b3-list:nth-of-type(8n)>[data-type="navigation-root"] {
-            background-color:rgb(167, 117, 76) !important;
+            background-color:rgba(176, 95, 28, 0.5) !important;
         }
     `;
 }
