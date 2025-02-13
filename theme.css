@@ -17,9 +17,9 @@
     --b3-protyle-inline-mark-background: rgba(60, 172, 78, 0.8);/* 标记色 */
     --hovercurrent: rgba(131, 129, 255, 0.5);
     --b3-theme-filetree: rgba(84, 84, 84, 0.2);
-    --b3-protyle-inline-link-color: rgb(124, 166, 215);
-    --b3-protyle-inline-blockref-color: rgb(180, 149, 195);
-    --b3-protyle-inline-fileref-color: rgb(122, 175, 122);
+    --b3-protyle-inline-link-color: rgb(88, 154, 229);
+    --b3-protyle-inline-blockref-color: rgb(170, 117, 197);
+    --b3-protyle-inline-fileref-color: rgb(83, 183, 83);
     --b3-list-icon-hover: rgba(85, 121, 200, 0.5);
     --b3-toolbar-hover: rgba(85, 121, 200, 0.5);
     --b3-theme-background-light: rgba(85, 121, 200, 0.5);
@@ -57,6 +57,19 @@
     --b3-width-transition: width .1s cubic-bezier(0, 0, .1, 1) 0ms;
     --b3-color-transition: color .1s cubic-bezier(0, 0, .1, 1) 0ms;
     --b3-background-transition: background 10ms ease-in 0s;
+
+    /* PDF */
+    --b3-pdf-selection: #94ff71;
+    --sidebar-width: 200px;
+    --b3-pdf-offset: 0;
+    --b3-pdf-background1: rgb(255, 195, 195);
+    --b3-pdf-background2: #ffcba5;
+    --b3-pdf-background3: #ffda83;
+    --b3-pdf-background4: #b1eda2;
+    --b3-pdf-background5: #85efe6;
+    --b3-pdf-background6: #a3d3ff;
+    --b3-pdf-background7: #f3c5ff;
+    --b3-pdf-dark: #292a2b;
 }
 
 /* 斜杠菜单展开 */
@@ -899,12 +912,14 @@ li.b3-list-item.b3-list-item--hide-action[data-subtype="h6"] .b3-list-item__grap
     border-radius: var(--b3-border-radius);
 }
 .protyle-wysiwyg[data-readonly=true] .av .av__celltext--url, .av__celltext.av__celltext--url, .av__celltext--url.b3-chip {
-    background-color: rgba(72, 142, 132, 0.2);
-    color: #488e84;
+    background-color: rgba(20, 159, 138, 0.4);
+    color: #a0cbcc;
     border-bottom: none;
 }
 .protyle-wysiwyg[data-readonly=true] .av .av__celltext--url:hover, .av__celltext.av__celltext--url:hover, .av__celltext--url.b3-chip:hover {
-    background-color: rgba(72, 142, 132, 0.5);
+    background-color: rgba(144, 220, 207, 0.8);
+    color: #004142;
+    transition: 0.1s;
 }
 .block__icon[data-type="av-add"] {
     margin-top: 8px;
@@ -1036,6 +1051,146 @@ li.b3-list-item.b3-list-item--hide-action[data-subtype="h6"] .b3-list-item__grap
 .protyle-wysiwyg [data-node-id][custom-h-style="下划线"] {
     border-radius: 0px;
     border-bottom: 3px solid;
+}
+[custom-h-style="下划线"] [data-type="NodeHeading"] {
+    border-radius: 0px;
+    border-bottom: 3px solid;
+}
+.protyle-wysiwyg [custom-h-style="层级"].h1:before,
+.protyle-wysiwyg [data-node-id][custom-h-style="层级"].h1:before {
+    content: "";
+    position: absolute;
+    left: -13px;
+    top: 16px;
+    width: 100%;
+    height: 100%;
+    background: url('img/一级标题.svg');
+    background-repeat: no-repeat;
+    background-size: 8px 8px;
+}
+[custom-h-style="层级"] [data-type="NodeHeading"].h1:before {
+    content: "";
+    position: absolute;
+    left: -13px;
+    top: 16px;
+    width: 100%;
+    height: 100%;
+    background: url('img/一级标题.svg');
+    background-repeat: no-repeat;
+    background-size: 8px 8px;
+}
+.protyle-wysiwyg [custom-h-style="层级"].h2:before,
+.protyle-wysiwyg [data-node-id][custom-h-style="层级"].h2:before {
+    content: "";
+    position: absolute;
+    left: -25px;
+    top: 1px;
+    width: 100%;
+    height: 100%;
+    background: url('img/二级标题.svg');
+    background-repeat: no-repeat;
+    background-size: 35px 35px;
+}
+[custom-h-style="层级"] [data-type="NodeHeading"].h2:before {
+    content: "";
+    position: absolute;
+    left: -25px;
+    top: 1px;
+    width: 100%;
+    height: 100%;
+    background: url('img/二级标题.svg');
+    background-repeat: no-repeat;
+    background-size: 35px 35px;
+}
+.protyle-wysiwyg [custom-h-style="层级"].h3:before,
+.protyle-wysiwyg [data-node-id][custom-h-style="层级"].h3:before {
+    content: "";
+    position: absolute;
+    left: -20px;
+    top: 5px;
+    width: 100%;
+    height: 100%;
+    background: url('img/三级标题.svg');
+    background-repeat: no-repeat;
+    background-size: 25px 25px;
+}
+[custom-h-style="层级"] [data-type="NodeHeading"].h3:before {
+    content: "";
+    position: absolute;
+    left: -20px;
+    top: 5px;
+    width: 100%;
+    height: 100%;
+    background: url('img/三级标题.svg');
+    background-repeat: no-repeat;
+    background-size: 25px 25px;
+}
+.protyle-wysiwyg [custom-h-style="层级"].h4:before,
+.protyle-wysiwyg [data-node-id][custom-h-style="层级"].h4:before {
+    content: "";
+    position: absolute;
+    left: -17px;
+    top: 8px;
+    width: 100%;
+    height: 100%;
+    background: url('img/四级标题.svg');
+    background-repeat: no-repeat;
+    background-size: 15px 15px;
+}
+[custom-h-style="层级"] [data-type="NodeHeading"].h4:before {
+    content: "";
+    position: absolute;
+    left: -17px;
+    top: 8px;
+    width: 100%;
+    height: 100%;
+    background: url('img/四级标题.svg');
+    background-repeat: no-repeat;
+    background-size: 15px 15px;
+}
+.protyle-wysiwyg [custom-h-style="层级"].h5:before,
+.protyle-wysiwyg [data-node-id][custom-h-style="层级"].h5:before {
+    content: "";
+    position: absolute;
+    left: -20px;
+    width: 100%;
+    height: 100%;
+    background: url('img/五级标题.svg');
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+}
+[custom-h-style="层级"] [data-type="NodeHeading"].h5:before {
+    content: "";
+    position: absolute;
+    left: -20px;
+    width: 100%;
+    height: 100%;
+    background: url('img/五级标题.svg');
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+}
+.protyle-wysiwyg [custom-h-style="层级"].h6:before,
+.protyle-wysiwyg [data-node-id][custom-h-style="层级"].h6:before {
+    content: "";
+    position: absolute;
+    left: -18px;
+    top: 6px;
+    width: 100%;
+    height: 100%;
+    background: url('img/六级标题.svg');
+    background-repeat: no-repeat;
+    background-size: 15px 15px;
+}
+[custom-h-style="层级"] [data-type="NodeHeading"].h6:before {
+    content: "";
+    position: absolute;
+    left: -18px;
+    top: 6px;
+    width: 100%;
+    height: 100%;
+    background: url('img/六级标题.svg');
+    background-repeat: no-repeat;
+    background-size: 15px 15px;
 }
 
 /* 自定义块属性background */
@@ -1423,3 +1578,117 @@ span[data-type~=mark],mark {
     background: var(--hovercurrent);
     transition: 0.3s;
 }
+
+/* 数据库chip颜色 */
+.custom-attr__avvalue .b3-chip[style*="color1)"], 
+.av__cell .b3-chip[style*="color1)"], 
+.av__panel .b3-chip[style*="color1)"], 
+[data-name="av-col-option"] .color__square[style*="color1)"], 
+.b3-menu__label .b3-chip[data-color="1"] {
+    color: rgb(215, 215, 215) !important;
+    background-color: rgba(255, 39, 39, 0.4) !important;
+}
+.custom-attr__avvalue .b3-chip[style*="color2)"], 
+.av__cell .b3-chip[style*="color2)"], 
+.av__panel .b3-chip[style*="color2)"], 
+[data-name="av-col-option"] .color__square[style*="color2)"], 
+.b3-menu__label .b3-chip[data-color="2"] {
+    color: rgb(215, 215, 215) !important;
+    background-color: rgba(255, 134, 64, 0.4) !important;
+}
+.custom-attr__avvalue .b3-chip[style*="color3)"], 
+.av__cell .b3-chip[style*="color3)"], 
+.av__panel .b3-chip[style*="color3)"], 
+[data-name="av-col-option"] .color__square[style*="color3)"], 
+.b3-menu__label .b3-chip[data-color="3"] {
+    color: rgb(215, 215, 215) !important;
+    background-color: rgba(48, 152, 255, 0.4) !important;
+}
+.custom-attr__avvalue .b3-chip[style*="color4)"], 
+.av__cell .b3-chip[style*="color4)"], 
+.av__panel .b3-chip[style*="color4)"], 
+[data-name="av-col-option"] .color__square[style*="color4)"], 
+.b3-menu__label .b3-chip[data-color="4"] {
+    color: rgb(215, 215, 215) !important;
+    background-color: rgba(56, 255, 69, 0.3) !important;
+}
+.custom-attr__avvalue .b3-chip[style*="color5)"], 
+.av__cell .b3-chip[style*="color5)"], 
+.av__panel .b3-chip[style*="color5)"], 
+[data-name="av-col-option"] .color__square[style*="color5)"], 
+.b3-menu__label .b3-chip[data-color="5"] {
+    color: rgb(59, 59, 59) !important;
+    background-color: rgba(239, 239, 239, 0.8) !important;
+}
+.custom-attr__avvalue .b3-chip[style*="color6)"], 
+.av__cell .b3-chip[style*="color6)"], 
+.av__panel .b3-chip[style*="color6)"], 
+[data-name="av-col-option"] .color__square[style*="color6)"], 
+.b3-menu__label .b3-chip[data-color="6"] {
+    color: rgb(215, 215, 215) !important;
+    background-color: rgba(170, 125, 255, 0.4) !important;
+}
+.custom-attr__avvalue .b3-chip[style*="color7)"], 
+.av__cell .b3-chip[style*="color7)"], 
+.av__panel .b3-chip[style*="color7)"], 
+[data-name="av-col-option"] .color__square[style*="color7)"], 
+.b3-menu__label .b3-chip[data-color="7"] {
+    color: rgb(215, 215, 215) !important;
+    background-color: rgba(255, 79, 249, 0.3) !important;
+}
+.custom-attr__avvalue .b3-chip[style*="color8)"], 
+.av__cell .b3-chip[style*="color8)"], 
+.av__panel .b3-chip[style*="color8)"], 
+[data-name="av-col-option"] .color__square[style*="color8)"], 
+.b3-menu__label .b3-chip[data-color="8"] {
+    color: rgb(215, 215, 215) !important;
+    background-color: rgba(242, 255, 59, 0.5) !important;
+}
+.custom-attr__avvalue .b3-chip[style*="color9)"], 
+.av__cell .b3-chip[style*="color9)"], 
+.av__panel .b3-chip[style*="color9)"], 
+[data-name="av-col-option"] .color__square[style*="color9)"], 
+.b3-menu__label .b3-chip[data-color="9"] {
+    color: rgb(215, 215, 215) !important;
+    background-color: rgba(93, 109, 255, 0.5) !important;
+}
+.custom-attr__avvalue .b3-chip[style*="color10)"], 
+.av__cell .b3-chip[style*="color10)"], 
+.av__panel .b3-chip[style*="color10)"], 
+[data-name="av-col-option"] .color__square[style*="color10)"], 
+.b3-menu__label .b3-chip[data-color="10"] {
+    color: rgb(215, 215, 215) !important;
+    background-color: rgba(75, 216, 255, 0.5) !important;
+}
+.custom-attr__avvalue .b3-chip[style*="color11)"], 
+.av__cell .b3-chip[style*="color11)"], 
+.av__panel .b3-chip[style*="color11)"], 
+[data-name="av-col-option"] .color__square[style*="color11)"], 
+.b3-menu__label .b3-chip[data-color="11"] {
+    color: rgb(215, 215, 215) !important;
+    background-color: rgba(255, 79, 161, 0.5) !important;
+}
+.custom-attr__avvalue .b3-chip[style*="color12)"], 
+.av__cell .b3-chip[style*="color12)"], 
+.av__panel .b3-chip[style*="color12)"], 
+[data-name="av-col-option"] .color__square[style*="color12)"], 
+.b3-menu__label .b3-chip[data-color="12"] {
+    color: rgb(215, 215, 215) !important;
+    background-color: rgba(164, 255, 73, 0.5) !important;
+}
+.custom-attr__avvalue .b3-chip[style*="color13)"], 
+.av__cell .b3-chip[style*="color13)"], 
+.av__panel .b3-chip[style*="color13)"], 
+[data-name="av-col-option"] .color__square[style*="color13)"], 
+.b3-menu__label .b3-chip[data-color="13"] {
+    color: rgb(215, 215, 215) !important;
+    background-color: rgb(86, 86, 86) !important;
+}
+.custom-attr__avvalue .b3-chip[style*="color14)"], 
+.av__cell .b3-chip[style*="color14)"], 
+.av__panel .b3-chip[style*="color14)"], 
+[data-name="av-col-option"] .color__square[style*="color14)"], 
+.b3-menu__label .b3-chip[data-color="14"] {
+    color: rgb(215, 215, 215) !important;
+    background-color: rgba(46, 98, 255, 0.4) !important;
+}   
