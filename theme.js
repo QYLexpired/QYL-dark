@@ -176,6 +176,7 @@ let isChecked4 = false;
 let isChecked5 = false;
 let isChecked6 = false;
 let isChecked7 = false;
+let isChecked9 = false;
 
 function createSettingsWindow() {
     // 检查是否已经存在设置窗口
@@ -192,6 +193,7 @@ function createSettingsWindow() {
     settingsWindow.style.boxShadow = 'var(--b3-point-shadow)';
     settingsWindow.style.zIndex = '1000';
     settingsWindow.style.borderRadius = '16px'; 
+    settingsWindow.style.animation = 'QYLpopout 0.2s forwards'; 
 
     // 创建复选框和标签
     const checkbox1 = document.createElement('input');
@@ -271,6 +273,17 @@ function createSettingsWindow() {
     label7.style.fontSize = '14px';
     label7.style.userSelect= 'none';
 
+    const checkbox9 = document.createElement('input');
+    checkbox9.type = 'checkbox';
+    checkbox9.id = 'QYLanimation-checkbox';
+    checkbox9.checked = isChecked9;
+
+    const label9 = document.createElement('label');
+    label9.htmlFor = 'QYLanimation-checkbox';
+    label9.textContent = ' 关闭主题动画';
+    label9.style.fontSize = '14px';
+    label9.style.userSelect= 'none';
+
     // 将复选框和标签组合
     const QYLfunctionpair1 = document.createElement('div');
     QYLfunctionpair1.className = 'checkbox-label-pair';
@@ -307,6 +320,11 @@ function createSettingsWindow() {
     QYLfunctionpair7.appendChild(checkbox7);
     QYLfunctionpair7.appendChild(label7);
 
+    const QYLfunctionpair9 = document.createElement('div');
+    QYLfunctionpair9.className = 'checkbox-label-pair';
+    QYLfunctionpair9.appendChild(checkbox9);
+    QYLfunctionpair9.appendChild(label9);
+
     // 将复选框和标签添加到设置窗口
     settingsWindow.appendChild(QYLfunctionpair1);
     settingsWindow.appendChild(QYLfunctionpair2);
@@ -315,6 +333,7 @@ function createSettingsWindow() {
     settingsWindow.appendChild(QYLfunctionpair5);
     settingsWindow.appendChild(QYLfunctionpair6);
     settingsWindow.appendChild(QYLfunctionpair7);
+    settingsWindow.appendChild(QYLfunctionpair9);
 
     // 将设置窗口添加到body
     document.body.appendChild(settingsWindow);
@@ -386,6 +405,16 @@ function createSettingsWindow() {
             enablecolorfulfiletree();
         } else {
             disablecolorfulfiletree();
+        }
+    });
+
+    // 关闭主题动画开关
+    checkbox9.addEventListener('change', function() {
+        isChecked9 = this.checked;
+        if (this.checked) {
+            enablecancleQYLanimation();
+        } else {
+            disablecancleQYLanimation();
         }
     });
 
@@ -714,6 +743,64 @@ function enablecolorfulfiletree() {
 // 关闭多彩文档树功能
 function disablecolorfulfiletree() {
     const styleSheet = document.getElementById("colorfulfiletree-style");
+    if (styleSheet) {
+        styleSheet.innerText = '';
+    }
+}
+
+// 关闭主题动画
+function enablecancleQYLanimation() {
+    let styleSheet = document.getElementById("QYLanimation-style");
+    if (!styleSheet) {
+        styleSheet = document.createElement("style");
+        styleSheet.id = "QYLanimation-style";
+        document.head.appendChild(styleSheet);
+    }
+    styleSheet.innerText = `
+        /* 动画效果 */
+        :root {
+            --b3-transition: all .2s cubic-bezier(0, 0, .2, 1) 0ms;
+            --b3-width-transition: width .2s cubic-bezier(0, 0, .2, 1) 0ms;
+            --b3-color-transition: color .2s cubic-bezier(0, 0, .2, 1) 0ms;
+            --b3-background-transition: background 20ms ease-in 0s;
+        }
+
+        /* 斜杠菜单动画 */
+        .protyle-hint.hint--menu {
+            animation: none !important;
+
+        }
+        /* 编辑器工具栏动画 */
+        .protyle-toolbar, .protyle-util, .protyle-hint {
+            animation: none !important;
+            transition: none;
+        }
+        /* 菜单弹出动画 */
+        .b3-menu, .b3-menu__item--show>.b3-menu__submenu {
+            animation: none !important;
+        }
+        /* 设置面板动画 */
+        .b3-dialog__body {
+            animation: none !important;
+
+        }
+        /* 文档树、反链面板等动画 */
+        #preview > img,
+        #dockLeft, #dockRight,
+        #layouts > div.fn__flex.fn__flex-1 > div.fn__flex-column.layout__dockr > div,
+        #layouts > div.fn__flex.fn__flex-1 > div.fn__flex-column.fn__flex-shrink.layout__dockl > div {
+            animation: none !important;
+        }
+        /* 任务列表动画 */
+        .protyle-wysiwyg .li.protyle-task--done > .protyle-action--task::before, .av__cell-check::before {
+            animation: none !important;
+        }
+    `;
+}
+
+// 取消关闭主题动画
+function disablecancleQYLanimation() {
+    const styleSheet = document.getElementById("QYLanimation-style");
     if (styleSheet) {
         styleSheet.innerText = '';
     }
