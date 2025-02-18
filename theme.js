@@ -631,9 +631,24 @@ function enablefullwidth() {
             margin-left: 20px !important;
             margin-right:20px !important;
         }
-        .protyle-background__icon img, .protyle-background__icon svg, .b3-chips__doctag .b3-chip {
+        @keyframes QYLbounceLeftspecial {
+            0% {
+                transform: translateX(100%);
+            }
+            30% {
+                transform: translateX(-10%);
+            }
+            70% {
+                transform: translateX(5%);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+        .protyle-background__icon, .protyle-background__icon img, .protyle-background__icon svg, .b3-chips__doctag .b3-chip {
             position: relative;
             left: -76px;
+            animation: QYLbounceLeftspecial 0.3s forwards;
         }
     `;
 }
@@ -642,7 +657,25 @@ function enablefullwidth() {
 function disablefullwidth() {
     const styleSheet = document.getElementById("fullwidth-style");
     if (styleSheet) {
-        styleSheet.innerText = '';
+        styleSheet.innerText = `
+            @keyframes QYLbounceRightspecial {
+                    0% {
+                        transform: translateX(-100%);
+                    }
+                    30% {
+                        transform: translateX(10%);
+                    }
+                    70% {
+                        transform: translateX(-5%);
+                    }
+                    100% {
+                        transform: translateX(0);
+                    }
+            }
+            .protyle-background__icon, .protyle-background__icon img, .protyle-background__icon svg, .b3-chips__doctag .b3-chip {
+                animation: QYLbounceRightspecial 0.3s forwards;
+            }
+    `;
     }
 }
 
