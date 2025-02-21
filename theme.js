@@ -1020,6 +1020,9 @@ function enableQYLAero() {
             margin: 8px 0px;
             background: transparent;
         }
+        div[data-key="dialog-snippets"] .layout-tab-bar.fn__flex.fn__flex-shrink {
+            background-color: rgba(255, 0, 0, 0);
+        }
 
         /* 命令面板毛玻璃 */
         div[data-key="dialog-commandpanel"] .b3-dialog__body {
@@ -1089,6 +1092,38 @@ function enableQYLAero() {
         .config-bazaar__readme--show {
             background-color: var(--QYL-filter-background2) !important;
             backdrop-filter: var(--QYL-filter2  ) !important;
+        }
+        .config-bazaar__panel .b3-card {
+            background-color: rgba(255, 0, 0, 0);
+        }
+        .config-bazaar__panel .b3-card:hover {
+            background-color: var(--hovercurrent);
+        }
+        /* 闪卡毛玻璃 */
+        div[data-key="dialog-viewcards"] .fn__flex-1.card__empty {
+            background-color: rgba(255, 0, 0, 0);
+            margin-left: 10px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            padding: 5px 20px;
+            border-radius: var(--b3-border-radius);
+            background-color: var(--QYLAero-label-background2) !important;
+        }
+        div[data-key="dialog-viewcards"] #cardPreview {
+            background-color: rgba(255, 0, 0, 0);
+            margin-left: 10px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            padding: 5px 20px;
+            border-radius: var(--b3-border-radius);
+            background-color: var(--QYLAero-label-background2) !important;
+        }
+        div[data-key="dialog-viewcards"] #cardPreview .protyle-breadcrumb {
+            background-color: rgba(255, 0, 0, 0);
+        }
+        div[data-key="dialog-opencard"] .b3-dialog__scrim {
+            background-color: var(--QYL-filter-background2) !important;
+            backdrop-filter: var(--QYL-filter2) !important;
         }
     `;
 }
