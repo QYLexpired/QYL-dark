@@ -153,7 +153,7 @@
 .b3-typography .h6,.b3-typography h6,.protyle-wysiwyg .h6,.protyle-wysiwyg h6 { color: var(--h6); }
 
 /* 表格优化 */
-th,td {
+.protyle-wysiwyg th, .protyle-wysiwyg td {
     border: 1.5px solid var(--b3-theme-on-surface) !important;
     background-color: rgba(255, 0, 0, 0) !important;
 }
@@ -2008,7 +2008,23 @@ body > div.block__popover.block__popover--open {
 /* 行内文字背景色样式 */
 span[data-type*="text"][style*="background-color: var(--b3-font-background"] {
     border-radius: 6px;
-    padding: 2px;
+    padding: 2px 4px;
+}
+span[data-type*="text"][style*="background-color: var(--b3-card-error-background)"] {
+    border-radius: 6px;
+    padding: 2px 4px;
+}
+span[data-type*="text"][style*="background-color: var(--b3-card-warning-background)"] {
+    border-radius: 6px;
+    padding: 2px 4px;
+}
+span[data-type*="text"][style*="background-color: var(--b3-card-info-background)"] {
+    border-radius: 6px;
+    padding: 2px 4px;
+}
+span[data-type*="text"][style*="background-color: var(--b3-card-success-background)"] {
+    border-radius: 6px;
+    padding: 2px 4px;
 }
 
 /* 资源图片预览动画 */
