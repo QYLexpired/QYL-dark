@@ -2,11 +2,9 @@
 
 ## 更新内容
 
-### v2.5.0
+### v2.5.1
 
-* 全面重构CSS，优化大量细节
-* 新增配色：勃艮第、玄青
-* 重构毛玻璃样式
+* 修复部分错误
 
 ## 主要特性
 
@@ -90,7 +88,7 @@ setTimeout(() => {isChecked11 = true; enablecancleQYLcolorfultag();}, 100);
 //默认使用勃艮第配色
 setTimeout(() => {isChecked12 = true; enableQYLburgundy();}, 100);
 
-//默认使用森林配色
+//默认使用玄青配色
 setTimeout(() => {isChecked13 = true; enableQYLxuanqing();}, 100);
 ```
 
@@ -102,6 +100,10 @@ setTimeout(() => {isChecked1 = true; enableMarkStyles();}, 100);
 ```
 
 ## 更新历史
+
+### v2.5.1
+
+* 修复部分错误
 
 ### v2.5.0
 

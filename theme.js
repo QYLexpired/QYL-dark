@@ -1264,10 +1264,10 @@ function enableQYLburgundy() {
         :root {
             /* 主色 */
             --b3-theme-background: #201d1d;
-            --b3-theme-background-light: rgba(255, 255, 255, 0.075);
+            --b3-theme-background-light:rgb(62, 58, 58); /* 编辑器较多变浅（不透明） */
             --b3-theme-surface: #2c2525;
             --b3-theme-surface-light: rgba(41, 42, 45, 0.86);
-            --b3-theme-surface-lighter: rgba(41, 42, 45, 0.06);
+            --b3-theme-surface-lighter: rgba(110, 91, 91, 0.5); /* 线条色 */
 
             /* 文字颜色 */
             --b3-theme-on-primary: #fff;
@@ -1331,6 +1331,11 @@ function enableQYLburgundy() {
             --b3-pdf-dark: #292a2b;
         }
         :root {
+            --QYL-blockquote: rgb(168, 145, 145);
+            --QYL-blockquote-background: rgb(58, 47, 47);
+            --QYL-blockquote-svg: rgb(114, 95, 95);
+        }
+        :root {
             --QYL-switch-close: var(--QYL-gray);
             --QYL-switch-close-background: rgb(48, 41, 41);
             --QYL-input-border: rgb(108, 79, 79);
@@ -1366,10 +1371,10 @@ function enableQYLxuanqing() {
         :root {
             /* 主色 */
             --b3-theme-background: rgb(29, 28, 37);
-            --b3-theme-background-light: rgba(29, 28, 37, 0.075);
+            --b3-theme-background-light:rgb(54, 53, 66); /* 编辑器较多变浅（不透明） */
             --b3-theme-surface: rgb(42, 41, 54);
-            --b3-theme-surface-light: rgba(42, 41, 54, 0.86);
-            --b3-theme-surface-lighter: rgba(42, 41, 54, 0.06);
+            --b3-theme-surface-light: rgba(42, 41, 54, 0.86); 
+            --b3-theme-surface-lighter: rgba(132, 129, 165, 0.5); /* 线条色 */
 
             /* 文字颜色 */
             --b3-theme-on-primary: #fff;
@@ -1431,6 +1436,11 @@ function enableQYLxuanqing() {
             --b3-pdf-background6: #a3d3ff;
             --b3-pdf-background7: #f3c5ff;
             --b3-pdf-dark: #292a2b;
+        }
+        :root {
+            --QYL-blockquote: rgb(131, 127, 148);
+            --QYL-blockquote-background: rgb(49, 47, 58);
+            --QYL-blockquote-svg: rgb(84, 81, 100);
         }
         :root {
             --QYL-switch-close: var(--QYL-gray);
