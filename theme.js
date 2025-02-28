@@ -180,6 +180,8 @@ let isChecked7 = false;
 let isChecked9 = false;
 let isChecked10 = false;
 let isChecked11 = false;
+let isChecked12 = false;
+let isChecked13 = false;
 
 function createSettingsWindow() {
     // 检查是否已经存在设置窗口
@@ -192,7 +194,7 @@ function createSettingsWindow() {
     settingsWindow.style.top = '32px'; 
     settingsWindow.style.right = '195px'; 
     settingsWindow.style.backgroundColor = 'var(--QYL-filter-background-forQsettings)';
-    settingsWindow.style.backdropFilter = 'var(--QYL-filter-forQsettings)';
+    settingsWindow.style.backdropFilter = 'var(--QYL-Aero-filter)';
     settingsWindow.style.padding = '12px';
     settingsWindow.style.boxShadow = 'var(--b3-point-shadow)';
     settingsWindow.style.zIndex = '1000';
@@ -310,6 +312,28 @@ function createSettingsWindow() {
     label11.style.fontSize = '14px';
     label11.style.userSelect= 'none';
 
+    const checkbox12 = document.createElement('input');
+    checkbox12.type = 'checkbox';
+    checkbox12.id = 'QYLburgundy-checkbox';
+    checkbox12.checked = isChecked12;
+
+    const label12 = document.createElement('label');
+    label12.htmlFor = 'QYLburgundy-checkbox';
+    label12.textContent = ' 配色：勃艮第';
+    label12.style.fontSize = '14px';
+    label12.style.userSelect= 'none';
+
+    const checkbox13 = document.createElement('input');
+    checkbox13.type = 'checkbox';
+    checkbox13.id = 'QYLxuanqing-checkbox';
+    checkbox13.checked = isChecked13;
+
+    const label13 = document.createElement('label');
+    label13.htmlFor = 'QYLxuanqing-checkbox';
+    label13.textContent = ' 配色：玄青';
+    label13.style.fontSize = '14px';
+    label13.style.userSelect= 'none';
+
     // 将复选框和标签组合
     const QYLfunctionpair1 = document.createElement('div');
     QYLfunctionpair1.className = 'checkbox-label-pair';
@@ -361,6 +385,16 @@ function createSettingsWindow() {
     QYLfunctionpair11.appendChild(checkbox11);
     QYLfunctionpair11.appendChild(label11);
 
+    const QYLfunctionpair12 = document.createElement('div');
+    QYLfunctionpair12.className = 'checkbox-label-pair';
+    QYLfunctionpair12.appendChild(checkbox12);
+    QYLfunctionpair12.appendChild(label12);
+
+    const QYLfunctionpair13 = document.createElement('div');
+    QYLfunctionpair13.className = 'checkbox-label-pair';
+    QYLfunctionpair13.appendChild(checkbox13);
+    QYLfunctionpair13.appendChild(label13);
+
     // 将复选框和标签添加到设置窗口
     settingsWindow.appendChild(QYLfunctionpair1);
     settingsWindow.appendChild(QYLfunctionpair2);
@@ -372,6 +406,8 @@ function createSettingsWindow() {
     settingsWindow.appendChild(QYLfunctionpair9);
     settingsWindow.appendChild(QYLfunctionpair10);
     settingsWindow.appendChild(QYLfunctionpair11);
+    settingsWindow.appendChild(QYLfunctionpair12);
+    settingsWindow.appendChild(QYLfunctionpair13);
 
     // 将设置窗口添加到body
     document.body.appendChild(settingsWindow);
@@ -475,6 +511,40 @@ function createSettingsWindow() {
             disablecancleQYLcolorfultag();
         }
     });
+
+    // 勃艮第配色开关
+    checkbox12.addEventListener('change', function() {
+        isChecked12 = this.checked;
+        resetCheckburgundy();
+        disableQYLxuanqing();
+        if (this.checked) {
+            enableQYLburgundy();
+        } else {
+            disableQYLburgundy();
+        }
+    });
+
+    //主题互斥-勃艮第
+    function resetCheckburgundy() {
+        isChecked13 = false;
+    }
+
+    // 玄青配色开关
+    checkbox13.addEventListener('change', function() {
+        isChecked13 = this.checked;
+        resetCheckxuanqing();
+        disableQYLburgundy();
+        if (this.checked) {
+            enableQYLxuanqing();
+        } else {
+            disableQYLxuanqing();
+        }
+    });
+
+    //主题互斥-玄青
+    function resetCheckxuanqing() {
+        isChecked12 = false;
+    }
 
     // ESC键关闭
     document.addEventListener('keydown', function(event) {
@@ -940,99 +1010,25 @@ function enableQYLAero() {
         document.head.appendChild(styleSheet);
     }
     styleSheet.innerText = `
+        :root {
+            --QYL-Aero-filter: blur(20px);
+            --QYL-filter-background: var(--QYL-filter-background-theme);
+            --QYL-filter-wrap-background: var(--QYL-filter-wrap-background-theme);
+            --QYL-filter-fix-background: var(--QYL-filter-fix-background-theme);
+            --QYL-filter-background-forQsettings: var(--QYL-filter-background);
+        }
+        /* 菜单毛玻璃 */
         .b3-menu, .b3-menu__item--show>.b3-menu__submenu {
             animation: none;
         }
-        /* 毛玻璃效果 */
-        :root {
-            --QYL-filter1: blur(10px);
-            --QYL-filter2: blur(16px);
-            --QYL-filter-background1: rgba(20, 20, 20, 0.5);
-            --QYL-filter-background2: rgba(20, 20, 20, 0.7);
-            --QYL-filter-background-fix: rgba(20, 20, 20, 0.9);
-            --QYL-filter-background-forQsettings: rgba(20, 20, 20, 0.7);
-            --QYL-filter-forQsettings: blur(16px);
-        }
-        /* 斜杠菜单毛玻璃 */
-        .protyle-hint.hint--menu {
-            background-color: var(--QYL-filter-background1) !important;
-            backdrop-filter: var(--QYL-filter1) !important;
-            border: none;
-        }
-        /* 编辑器工具栏毛玻璃 */
-        .protyle-toolbar, .protyle-util, .protyle-hint {
-            background-color: var(--QYL-filter-background1) !important;
-            backdrop-filter: var(--QYL-filter1) !important;
-            border: none;
-        }
-        /* 底部状态栏毛玻璃 */
-        @media (min-width: 768px) {
-            #status {
-                background-color: var(--QYL-filter-background1) !important;
-                backdrop-filter: var(--QYL-filter1) !important;
-                border: none;
-            }
-        }
-        /* 提示气泡毛玻璃 */
-        #tooltip {
-            background-color: var(--QYL-filter-background1) !important;
-            backdrop-filter: var(--QYL-filter1) !important;
-            color: var(--b3-theme-on-background);
-            box-shadow: var(--b3-light-shadow);
-        }
-        .b3-tooltips::before {
-            display: none !important;
-        }
-        .b3-tooltips::after {
-            background-color: var(--QYL-filter-background1) !important;
-            backdrop-filter: var(--QYL-filter1) !important;
-            color: var(--b3-theme-on-background);
-            box-shadow: var(--b3-light-shadow);
-        }
-        /* 修复编辑器工具栏提示气泡 */
-        .protyle-toolbar .b3-tooltips::after {
-            background-color: var(--QYL-filter-background-fix) !important;
-        }
-        /* 行内备注输入框毛玻璃 */
-        .block__icons.block__icons--menu.fn__flex {
-            background-color: var(--QYL-filter-background1) !important;
-            backdrop-filter: var(--QYL-filter1) !important;
-        }
-        .block__icons.block__icons--menu.fn__flex + .b3-text-field.b3-text-field--text.fn__block {
-            background-color: var(--QYL-filter-background1) !important;
-            backdrop-filter: var(--QYL-filter1) !important;
-        }
-        /* 右上角消息框毛玻璃 */
-        .b3-snackbar__content {
-            background-color: var(--QYL-filter-background1) !important;
-            backdrop-filter: var(--QYL-filter1) !important;
-            color: var(--b3-theme-on-background)
-        }
-        /* 题头图设置毛玻璃 */
-        .protyle-background__img .protyle-icon {
-            background-color: var(--QYL-filter-background2) !important;
-            backdrop-filter: var(--QYL-filter2  ) !important;
-            color: var(--b3-theme-on-background);
-        }
-        /* 菜单毛玻璃 */
         .b3-menu, .b3-menu__submenu {
-            background-color: var(--QYL-filter-background2) !important;
-            border: none !important;
+            background-color: var(--QYL-filter-background);
+            border: none;
         }
-        .b3-menu::before {
-            border-radius: var(--b3-border-radius);
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            backdrop-filter: var(--QYL-filter2) !important;
-        }
-        .b3-menu .b3-menu__items, .b3-menu .b3-menu__items * {
+        .b3-menu__item, .b3-menu__items, .b3-menu__items * {
             background-color: rgba(255, 0, 0, 0);
         }
-        .b3-menu__submenu::before {
+        .b3-menu::before, .b3-menu__submenu::before {
             border-radius: var(--b3-border-radius);
             content: '';
             position: absolute;
@@ -1040,15 +1036,16 @@ function enableQYLAero() {
             right: 0;
             bottom: 0;
             left: 0;
-            backdrop-filter: var(--QYL-filter2  ) !important;
+            backdrop-filter: var(--QYL-Aero-filter);
+            z-index: -5;
         }
-        .b3-menu__item--current:not(.b3-menu__item--readonly):hover {
-            background-color: var(--hovercurrent);
-        }
-        /* 弹出框侧栏毛玻璃 */
+        /* b3窗口毛玻璃 */
         .b3-dialog__container {
-            background-color: var(--QYL-filter-background2) !important;
-            border: none !important;
+            background-color: var(--QYL-filter-background);
+            border: none;
+        }
+        .b3-dialog__container .config__tab-wrap {
+            background-color: var(--QYL-filter-wrap-background);
         }
         .b3-dialog__container::before {
             border-radius: var(--b3-border-radius);
@@ -1058,237 +1055,147 @@ function enableQYLAero() {
             right: 0;
             bottom: 0;
             left: 0;
-            backdrop-filter: var(--QYL-filter2) !important;
+            backdrop-filter: var(--QYL-Aero-filter);
             z-index: -5;
         }
-        /* 修复PDF搜索栏 */
-        #outerContainer #mainContainer .findbar.b3-menu.doorHanger.wrapContainers * {
-            z-index: 1 !important;
-        }
-        /* 修复PDF标注颜色栏不能显示 */
-        #outerContainer > div.pdf__util.b3-menu .fn__flex button {
-            z-index: 1 !important;
-        }
-        .pdf__outer.sidebarOpen .pdf__util.b3-menu > button {
-            background-color: rgba(255, 0, 0, 0);
-        }
-        .pdf__outer.sidebarOpen .pdf__util.b3-menu > button:hover {
-            background-color: var(--hovercurrent);
-        }     
-        /* 修复PDF菜单没有悬浮色 */   
-        #secondaryToolbarButtonContainer button:hover {
-            background-color: var(--hovercurrent);
-        }
-        /* 设置页毛玻璃 */
-        :root {
-            --QYLAero-label-background: rgba(54, 54, 54, 0.2);
-            --QYLAero-label-background2: rgba(54, 54, 54, 0.4);
-            --QYLAero-input-background: rgb(43, 43, 43);
-            --QYLAero-input-hover-background: rgb(186, 186, 186);
-            --QYLAero-input-focus-background: rgb(82, 118, 236);
-        }
-        div[data-key="dialog-setting"] .config__tab-wrap {
-            background-color: rgba(255, 0, 0, 0);
-        }
-        div[data-key="dialog-setting"] .fn__flex.b3-label, div[data-key="dialog-setting"] .b3-label {
-            margin-bottom: 5px !important;
-            padding: 5px 10px !important;
-            border-radius: var(--b3-border-radius);
-            background-color: var(--QYLAero-label-background);
-            box-shadow: none !important;
-        }
-        div[data-key="dialog-setting"] .layout-tab-bar.fn__flex {
-            background-color: rgba(255, 0, 0, 0);
-        }
-        div[data-key="dialog-setting"] .b3-text-field.fn__block.b3-form__icon-input {
-            background-color: rgba(255, 0, 0, 0);
+        .config__tab-container .b3-label:not(.b3-label--inner) {
             box-shadow: none;
-            background-color: var(--QYLAero-label-background2);
         }
-        div[data-key="dialog-setting"] :is(.b3-select, .b3-text-field) {
-            background-color: rgba(255, 0, 0, 0);
-            box-shadow: none;
-            background-color: var(--QYLAero-input-background);
+        .b3-text-field, .pcr-app .pcr-interaction .pcr-result, .b3-select {
+            background-color: var(--b3-theme-background) !important;
         }
-        div[data-key="dialog-setting"] :is(.b3-select, .b3-text-field):hover {
-            box-shadow: inset 0 0 0 1px var(--QYLAero-input-focus-background) !important;
-        }
-        div[data-key="dialog-setting"] span[style*="color:var(--b3-theme-background)"][style*="font-family: cursive"] {
-            color: rgba(255, 0, 0, 0) !important;
-        }
-        .config__panel>.b3-tab-bar .config__tab-hr {
-            margin: 8px 0px;
-            background: transparent;
-        }
-        div[data-key="dialog-snippets"] .layout-tab-bar.fn__flex.fn__flex-shrink {
-            background-color: rgba(255, 0, 0, 0);
-        }
-        .b3-text-field:not(.b3-text-field--text):hover {
-            box-shadow: inset 0 0 0 1px var(--QYLAero-input-hover-background) !important;
-            background-color: rgba(255, 0, 0, 0) !important;
-        }
-        .b3-text-field:not(.b3-text-field--text):focus {
-            box-shadow: inset 0 0 0 1px var(--QYLAero-input-focus-background) !important;
-            background-color: rgba(255, 0, 0, 0) !important;
-        }
-
         /* 命令面板毛玻璃 */
-        div[data-key="dialog-commandpanel"] .b3-dialog__body {
-            background-color: rgba(255, 0, 0, 0);
-        }
         div[data-key="dialog-commandpanel"] .b3-list.b3-list--background.search__list {
             background-color: rgba(255, 0, 0, 0);
         }
-        div[data-key="dialog-commandpanel"] .search__header .b3-text-field--text {
-            background-color: rgba(27, 152, 27, 0);
+        div[data-key="dialog-commandpanel"] .b3-dialog__body .fn__flex-column .b3-form__icon.search__header {
+            background-color: var(--QYL-filter-wrap-background);
         }
-        div[data-key="dialog-commandpanel"] .search__header {
-            margin-left: 10px;
-            margin-right: 10px;
-            border-radius: var(--b3-border-radius);
-            background-color: var(--QYLAero-label-background2) !important;
-            border: none !important;
-        }
-        div[data-key="dialog-commandpanel"] .search__header:hover {
-            box-shadow: inset 0 0 0 1px var(--QYLAero-input-hover-background) !important;
-            background-color: rgba(255, 0, 0, 0) !important;
-            transition: var(--b3-transition);
-        }
-
         /* 搜索面板毛玻璃 */
-        .b3-dialog__body .b3-form__icon.search__header .b3-text-field.b3-text-field--text {
-            background-color: rgba(27, 152, 27, 0);
+        div[data-key="dialog-globalsearch"] .b3-dialog__body .b3-form__icon.search__header {
+            background-color: var(--QYL-filter-wrap-background);
         }
-        .b3-dialog__body .b3-form__icon.search__header {
-            background-color: rgba(27, 152, 27, 0);
+        div[data-key="dialog-globalsearch"] .search__header[id="criteria"] {
+            background-color: var(--QYL-filter-wrap-background);
         }
-        .b3-dialog__body .b3-form__icon.search__header:hover {
-            box-shadow: inset 0 0 0 1px var(--QYLAero-input-hover-background) !important;
-            background-color: rgba(255, 0, 0, 0) !important;
-            transition: var(--b3-transition);
+        div[data-key="dialog-globalsearch"] .search__list {
+            background-color: var(--QYL-filter-wrap-background);
         }
-        .b3-dialog__body .search__header {
-            margin-left: 10px;
-            margin-right: 10px;
-            margin-top: 5px;
-            border-radius: var(--b3-border-radius);
-            background-color: var(--QYLAero-label-background) !important;
-            border: none;
-            background-color: rgba(27, 152, 27, 0);
+        div[data-key="dialog-globalsearch"] .search__preview {
+            background-color: var(--QYL-filter-wrap-background);
         }
-        .b3-dialog__body .fn__flex-1.search__list.b3-list.b3-list--background {
-            border: none;
-            margin: 5px 10px;
-            border-radius: var(--b3-border-radius);
-            padding: 5px;
-            background-color: var(--QYLAero-label-background);
+        div[data-key="dialog-globalsearch"] .search__preview .protyle-breadcrumb {
+            background-color: rgba(255, 0, 0, 0);
         }
-        .b3-dialog__body .search__preview.protyle .protyle-breadcrumb {
-            background-color: rgba(27, 152, 27, 0);
-        }
-        .b3-dialog__body .fn__flex-1.search__preview.b3-typography {
-            border: none;
-            margin: 5px 10px;
-            border-radius: var(--b3-border-radius);
-            padding: 5px;
-            background-color: var(--QYLAero-label-background);
-        }
-        .b3-dialog__body .search__preview.protyle {
-            border: none;
-            margin: 5px 10px;
-            border-radius: var(--b3-border-radius);
-            padding: 5px;
-            background-color: var(--QYLAero-label-background);
-        }
-        .b3-dialog__body .search__tip {
-            border: none;
-        }
-        .search__layout--row {
-            border: none;
+        div[data-key="dialog-globalsearch"] .block__icons[style="overflow: auto"] {
+            background-color: rgba(255, 0, 0, 0);
         }
         /* 集市毛玻璃 */
         .config-bazaar__readme--show {
-            background-color: var(--QYL-filter-background2) !important;
-            backdrop-filter: var(--QYL-filter2  ) !important;
-        }
-        .config-bazaar__panel .b3-card {
-            background-color: rgba(255, 0, 0, 0);
-        }
-        .config-bazaar__panel .b3-card:hover {
-            background-color: var(--hovercurrent);
+            background-color: var(--QYL-filter-background);
+            backdrop-filter: var(--QYL-Aero-filter);
         }
         /* 闪卡毛玻璃 */
+        div[data-key="dialog-opencard"] .b3-dialog__scrim {
+            background-color: var(--QYL-filter-background) !important;
+            backdrop-filter: var(--QYL-Aero-filter);
+        }
+        div[data-key="dialog-opencard"] .card__main {
+            background-color: rgba(255, 0, 0, 0);
+        }
+        div[data-key="dialog-opencard"] .card__main .protyle, div[data-key="dialog-opencard"] .card__main .protyle .protyle-breadcrumb {
+            background-color: rgba(255, 0, 0, 0);
+        }
+        div[data-key="dialog-viewcards"] #cardPreview, div[data-key="dialog-viewcards"] #cardPreview .protyle-breadcrumb {
+            background-color: rgba(255, 0, 0, 0);
+        }
+        div[data-key="dialog-viewcards"] .block__icons .counter {
+            background-color: var(--QYL-filter-background);
+        }
         div[data-key="dialog-viewcards"] .fn__flex-1.card__empty {
             background-color: rgba(255, 0, 0, 0);
-            margin-left: 10px;
-            margin-right: 10px;
-            margin-bottom: 10px;
-            padding: 5px 20px;
-            border-radius: var(--b3-border-radius);
-            background-color: var(--QYLAero-label-background2) !important;
         }
-        div[data-key="dialog-viewcards"] #cardPreview {
-            background-color: rgba(255, 0, 0, 0);
-            margin-left: 10px;
-            margin-right: 10px;
-            margin-bottom: 10px;
-            padding: 5px 20px;
-            border-radius: var(--b3-border-radius);
-            background-color: var(--QYLAero-label-background2) !important;
+        /* 文档树等取消钉住毛玻璃 */
+        .layout--float .layout-tab-container {
+            background-color: var(--QYL-filter-background) !important;
+            backdrop-filter: var(--QYL-Aero-filter);
+            box-shadow: var(--b3-dialog-shadow);
         }
-        div[data-key="dialog-viewcards"] #cardPreview .protyle-breadcrumb {
-            background-color: rgba(255, 0, 0, 0);
-        }
-        div[data-key="dialog-opencard"] .b3-dialog__scrim {
-            background-color: var(--QYL-filter-background2) !important;
-            backdrop-filter: var(--QYL-filter2) !important;
-        }
-        /* 文档树/大纲取消钉住毛玻璃 */
-        .layout--float {
-            border: none !important;
-            border-radius: var(--b3-border-radius) !important;
-            background-color: var(--QYL-filter-background2) !important;
-            backdrop-filter: var(--QYL-filter2) !important;
-        }
-        .layout--float .layout-tab-container.fn__flex-1 {
+        .layout--float .fn__flex-1 {
             background-color: rgba(255, 0, 0, 0) !important;
         }
         .layout--float .block__icons {
             background-color: rgba(255, 0, 0, 0) !important;
         }
-        /* 关系图取消钉住毛玻璃 */
-        .layout--float .fn__flex-1.graph.file-tree.sy__graph {
-            background-color: rgba(255, 0, 0, 0) !important;
+        /* 编辑器工具栏毛玻璃 */
+        .protyle-toolbar, .protyle-util, .protyle-hint, .protyle-util .block__icons {
+            background-color: var(--QYL-filter-background) !important;
+            backdrop-filter: var(--QYL-Aero-filter);
+            border: none;
         }
-        .layout--float .fn__flex-1.graph.file-tree.sy__graph .graph__svg {
-            background-color: rgba(255, 0, 0, 0) !important;
+        /* 底部状态栏毛玻璃 */
+        @media (min-width: 768px) {
+            #status {
+                background-color: var(--QYL-filter-background);
+                backdrop-filter: var(--QYL-Aero-filter);
+                border: none;
+            }
         }
-        .layout--float .fn__flex-1.graph.file-tree.sy__graph .graph__panel {
-            background-color: var(--QYL-filter-background-fix) !important;
+        /* 斜杠菜单毛玻璃 */
+        .protyle-hint.hint--menu {
+            background-color: var(--QYL-filter-background);
+            backdrop-filter: var(--QYL-Aero-filter);
+            border: none;
         }
-        /* 全局关系图取消钉住毛玻璃 */
-        .layout--float .fn__flex-1.graph.file-tree.sy__globalGraph {
-            background-color: rgba(255, 0, 0, 0) !important;
-        }
-        .layout--float .fn__flex-1.graph.file-tree.sy__globalGraph .graph__svg {
-            background-color: rgba(255, 0, 0, 0) !important;
-        }
-        .layout--float .fn__flex-1.graph.file-tree.sy__globalGraph .graph__panel {
-            background-color: var(--QYL-filter-background-fix) !important;
-        }
-        /* 反向链接取消钉住毛玻璃 */
-        .layout--float .fn__flex-1.fn__flex-column.file-tree.sy__backlink {
-            background-color: rgba(255, 0, 0, 0) !important;
-        }
-        .layout--float .fn__flex-1.fn__flex-column.file-tree.sy__backlink .layout-tab-container.fn__flex-1 {
-            background-color: rgba(255, 0, 0, 0) !important;
-        }
-        .layout--float .fn__flex-1.fn__flex-column.file-tree.sy__backlink .b3-menu {
-            background-color: rgba(255, 0, 0, 0) !important;
+        /* 行内备注输入框毛玻璃 */
+        .block__icons.block__icons--menu.fn__flex {
+            background-color: var(--QYL-filter-background);
+            backdrop-filter: var(--QYL-Aero-filter);
         }
         /* 修复自定义属性面板毛玻璃 */
         div[data-key="dialog-attr"] .layout-tab-bar {
-            background-color: rgba(255, 0, 0, 0) !important;
+            background-color: rgba(255, 0, 0, 0);
+        }
+        /* 修复集市毛玻璃 */
+        div[data-key="dialog-setting"] [data-name="bazaar"] .layout-tab-bar {
+            background-color: rgba(255, 0, 0, 0);
+        }
+        /* 修复AI毛玻璃 */
+        div[data-key="dialog-setting"] [data-name="AI"] .layout-tab-bar {
+            background-color: rgba(255, 0, 0, 0);
+        }
+        /* 修复代码片段毛玻璃 */
+        [data-key="dialog-snippets"] .layout-tab-bar {
+            background-color: rgba(255, 0, 0, 0);
+        }
+        /* 修复资源毛玻璃 */
+        div[data-key="dialog-setting"] [data-name="image"] .layout-tab-bar {
+            background-color: rgba(255, 0, 0, 0);
+        }
+        /* 提示气泡毛玻璃 */
+        #tooltip {
+            background-color: var(--QYL-filter-background);
+            backdrop-filter: var(--QYL-Aero-filter);
+            color: var(--b3-theme-on-background);
+            box-shadow: var(--b3-light-shadow);
+        }
+        .b3-tooltips::before {
+            display: none !important;
+        }
+        .b3-tooltips::after {
+            background-color: var(--QYL-filter-background);
+            backdrop-filter: var(--QYL-Aero-filter);
+            color: var(--b3-theme-on-background);
+            box-shadow: var(--b3-light-shadow);
+        }
+        .protyle-toolbar .b3-tooltips::after {
+            background-color: var(--QYL-filter-fix-background) !important;
+        }
+        /* 右上角消息框毛玻璃 */
+        .b3-snackbar__content {
+            background-color: var(--QYL-filter-background);
+            backdrop-filter: var(--QYL-Aero-filter);
+            color: var(--b3-theme-on-background)
         }
     `;
 }
@@ -1340,6 +1247,210 @@ function enablecancleQYLcolorfultag() {
 // 关闭多彩标签和多彩行级代码
 function disablecancleQYLcolorfultag() {
     const styleSheet = document.getElementById("QYLcolorfultag-style");
+    if (styleSheet) {
+        styleSheet.innerText = '';
+    }
+}
+
+// 开启勃艮第配色
+function enableQYLburgundy() {
+    let styleSheet = document.getElementById("QYLburgundy-style");
+    if (!styleSheet) {
+        styleSheet = document.createElement("style");
+        styleSheet.id = "QYLburgundy-style";
+        document.head.appendChild(styleSheet);
+    }
+    styleSheet.innerText = `
+        :root {
+            /* 主色 */
+            --b3-theme-background: #201d1d;
+            --b3-theme-background-light: rgba(255, 255, 255, 0.075);
+            --b3-theme-surface: #2c2525;
+            --b3-theme-surface-light: rgba(41, 42, 45, 0.86);
+            --b3-theme-surface-lighter: rgba(41, 42, 45, 0.06);
+
+            /* 文字颜色 */
+            --b3-theme-on-primary: #fff;
+            --b3-theme-on-secondary: #fff;
+            --b3-theme-on-background: #b5b5b5;
+            --b3-theme-on-surface: #9aa0a6;
+            --b3-theme-on-surface-light: #bababa;
+            --b3-theme-on-error: #fff;
+
+            /* 容器阴影 */
+            --b3-point-shadow: 0 2px 4px rgba(122, 122, 122, 0.3), 0 4px 6px rgba(122, 122, 122, 0.3);
+            --b3-dialog-shadow: 0 2px 4px rgba(122, 122, 122, 0.3), 0 4px 6px rgba(122, 122, 122, 0.3);
+            --b3-button-shadow: 0 2px 4px rgba(122, 122, 122, 0.3), 0 4px 6px rgba(122, 122, 122, 0.3);
+            --b3-light-shadow: 0 4px 6px rgba(122, 122, 122, 0.3);
+        }
+        :root {
+            --QYL-hover: rgba(138, 63, 63, 0.6); /* 主要悬停色 */
+            --QYL-hover-hover: rgba(138, 63, 63, 0.7);/* 主要悬停色加深 */
+            --QYL-hover-light: rgba(138, 63, 63, 0.1);/* 主要悬停色变浅 */
+            --QYL-filetree: var(--b3-theme-background); /* 文档树、反链等背景色 */
+            --b3-list-hover: var(--QYL-hover); /* 大部分悬停背景色 */
+            --b3-toolbar-hover: var(--QYL-hover); /*顶部工具栏悬停背景色 */
+            --b3-list-icon-hover: var(--QYL-hover-hover); /* 文档树按钮悬停色、面包屑栏按钮悬停色 */
+            --b3-theme-primary: #742727; 
+            --b3-theme-primary-light: rgba(103, 47, 47, 0.5); /* 主色0.5透明度 */
+            --b3-theme-primary-lighter: rgba(103, 47, 47, 0.35); /* 主色0.3透明度 */
+            --b3-theme-primary-lightest: rgba(103, 47, 47, 0.1); /* 主色0.1透明度 */
+            --b3-protyle-inline-mark-background: rgba(81, 150, 92, 0.8);/* 标记色 */
+            --b3-protyle-inline-mark-color: #dadada; /* 标记文字色 */
+            --b3-border-color: var(--b3-theme-surface-lighter); /* 线条色 */
+            --b3-scroll-color: rgb(57, 41, 41); /* 滚动条颜色 */
+            --QYL-white: #fff; /* 通用白 */
+            --QYL-black: #171717; /* 通用黑 */
+            --QYL-gray: #bfbfbf; /* 通用灰 */
+            --b3-toolbar-blur-background: #302b2b; /* 失焦颜色 */
+            --QYL-filter-background-forQsettings: var(--b3-theme-background);
+
+            /* 圆角矩形 */
+            --b3-border-radius: 10px;
+            --b3-border-radius-b: 10px;
+            --b3-border-radius-q: 16px;
+            
+            /* 动画效果 */
+            --b3-transition: 0.2s ease-in-out;
+            --b3-transition-slow: 0.4s ease-in-out;
+            --b3-width-transition: width 0.2s ease-in-out;
+            --b3-color-transition: color 0.2s ease-in-out;
+            --b3-background-transition: background 0.2s ease-in-out;
+
+            /* PDF */
+            --b3-pdf-selection: #94ff71;
+            --sidebar-width: 200px;
+            --b3-pdf-offset: 0;
+            --b3-pdf-background1: #ffc3c3;
+            --b3-pdf-background2: #ffcba5;
+            --b3-pdf-background3: #ffda83;
+            --b3-pdf-background4: #b1eda2;
+            --b3-pdf-background5: #85efe6;
+            --b3-pdf-background6: #a3d3ff;
+            --b3-pdf-background7: #f3c5ff;
+            --b3-pdf-dark: #292a2b;
+        }
+        :root {
+            --QYL-switch-close: var(--QYL-gray);
+            --QYL-switch-close-background: rgb(48, 41, 41);
+            --QYL-input-border: rgb(108, 79, 79);
+            --QYL-input-border-hover: var(--b3-theme-primary);
+            --b3-switch-checked-background: var(--b3-theme-primary);
+            --b3-switch-checked: var(--QYL-gray);
+        }
+        :root {
+            --QYL-filter-background-theme: rgba(22, 15, 15, 0.5);
+            --QYL-filter-wrap-background-theme: rgba(22, 15, 15, 0.6);
+            --QYL-filter-fix-background-theme: rgba(22, 15, 15, 0.8);
+        }
+    `;
+}
+
+// 关闭勃艮第配色
+function disableQYLburgundy() {
+    const styleSheet = document.getElementById("QYLburgundy-style");
+    if (styleSheet) {
+        styleSheet.innerText = '';
+    }
+}
+
+// 开启玄青配色
+function enableQYLxuanqing() {
+    let styleSheet = document.getElementById("QYLxuanqing-style");
+    if (!styleSheet) {
+        styleSheet = document.createElement("style");
+        styleSheet.id = "QYLxuanqing-style";
+        document.head.appendChild(styleSheet);
+    }
+    styleSheet.innerText = `
+        :root {
+            /* 主色 */
+            --b3-theme-background: rgb(29, 28, 37);
+            --b3-theme-background-light: rgba(29, 28, 37, 0.075);
+            --b3-theme-surface: rgb(42, 41, 54);
+            --b3-theme-surface-light: rgba(42, 41, 54, 0.86);
+            --b3-theme-surface-lighter: rgba(42, 41, 54, 0.06);
+
+            /* 文字颜色 */
+            --b3-theme-on-primary: #fff;
+            --b3-theme-on-secondary: #fff;
+            --b3-theme-on-background: #b5b5b5;
+            --b3-theme-on-surface: #9aa0a6;
+            --b3-theme-on-surface-light: #bababa;
+            --b3-theme-on-error: #fff;
+
+            /* 容器阴影 */
+            --b3-point-shadow: 0 2px 4px rgba(122, 122, 122, 0.3), 0 4px 6px rgba(122, 122, 122, 0.3);
+            --b3-dialog-shadow: 0 2px 4px rgba(122, 122, 122, 0.3), 0 4px 6px rgba(122, 122, 122, 0.3);
+            --b3-button-shadow: 0 2px 4px rgba(122, 122, 122, 0.3), 0 4px 6px rgba(122, 122, 122, 0.3);
+            --b3-light-shadow: 0 4px 6px rgba(122, 122, 122, 0.3);
+        }
+        :root {
+            --QYL-hover: rgba(62, 67, 117, 0.65); /* 主要悬停色 */
+            --QYL-hover-hover: rgba(62, 67, 117, 0.75);/* 主要悬停色加深 */
+            --QYL-hover-light: rgba(62, 67, 117, 0.15);/* 主要悬停色变浅 */
+            --QYL-filetree: var(--b3-theme-background); /* 文档树、反链等背景色 */
+            --b3-list-hover: var(--QYL-hover); /* 大部分悬停背景色 */
+            --b3-toolbar-hover: var(--QYL-hover); /*顶部工具栏悬停背景色 */
+            --b3-list-icon-hover: var(--QYL-hover-hover); /* 文档树按钮悬停色、面包屑栏按钮悬停色 */
+            --b3-theme-primary: #403d94; 
+            --b3-theme-primary-light: rgba(64, 61, 148, 0.5); /* 主色0.5透明度 */
+            --b3-theme-primary-lighter: rgba(64, 61, 148, 0.3); /* 主色0.3透明度 */
+            --b3-theme-primary-lightest: rgba(64, 61, 148, 0.1); /* 主色0.1透明度 */
+            --b3-protyle-inline-mark-background: rgba(81, 150, 92, 0.8);/* 标记色 */
+            --b3-protyle-inline-mark-color: #dadada; /* 标记文字色 */
+            --b3-border-color: var(--b3-theme-surface-lighter); /* 线条色 */
+            --b3-scroll-color: rgb(50, 48, 65); /* 滚动条颜色 */
+            --QYL-white: #fff; /* 通用白 */
+            --QYL-black: #171717; /* 通用黑 */
+            --QYL-gray: #bfbfbf; /* 通用灰 */
+            --b3-toolbar-blur-background: rgb(37, 36, 42); /* 失焦颜色 */
+            --QYL-filter-background-forQsettings: var(--b3-theme-background);
+
+            /* 圆角矩形 */
+            --b3-border-radius: 10px;
+            --b3-border-radius-b: 10px;
+            --b3-border-radius-q: 16px;
+            
+            /* 动画效果 */
+            --b3-transition: 0.2s ease-in-out;
+            --b3-transition-slow: 0.4s ease-in-out;
+            --b3-width-transition: width 0.2s ease-in-out;
+            --b3-color-transition: color 0.2s ease-in-out;
+            --b3-background-transition: background 0.2s ease-in-out;
+
+            /* PDF */
+            --b3-pdf-selection: #94ff71;
+            --sidebar-width: 200px;
+            --b3-pdf-offset: 0;
+            --b3-pdf-background1: #ffc3c3;
+            --b3-pdf-background2: #ffcba5;
+            --b3-pdf-background3: #ffda83;
+            --b3-pdf-background4: #b1eda2;
+            --b3-pdf-background5: #85efe6;
+            --b3-pdf-background6: #a3d3ff;
+            --b3-pdf-background7: #f3c5ff;
+            --b3-pdf-dark: #292a2b;
+        }
+        :root {
+            --QYL-switch-close: var(--QYL-gray);
+            --QYL-switch-close-background: rgb(66, 67, 95);
+            --QYL-input-border: rgb(60, 57, 98);
+            --QYL-input-border-hover: var(--b3-theme-primary);
+            --b3-switch-checked-background: var(--b3-theme-primary);
+            --b3-switch-checked: var(--QYL-gray);
+        }
+        :root {
+            --QYL-filter-background-theme: rgba(34, 35, 44, 0.5);
+            --QYL-filter-wrap-background-theme: rgba(34, 35, 44, 0.6);
+            --QYL-filter-fix-background-theme: rgba(34, 35, 44, 0.8);
+        }
+    `;
+}
+
+// 关闭玄青配色
+function disableQYLxuanqing() {
+    const styleSheet = document.getElementById("QYLxuanqing-style");
     if (styleSheet) {
         styleSheet.innerText = '';
     }
