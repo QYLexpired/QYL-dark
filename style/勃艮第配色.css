@@ -1,10 +1,10 @@
 :root {
     /* 主色 */
     --b3-theme-background: #201d1d;
-    --b3-theme-background-light: rgba(255, 255, 255, 0.075);
+    --b3-theme-background-light:rgb(71, 64, 64); /* 编辑器较多变浅（不透明） */
     --b3-theme-surface: #2c2525;
     --b3-theme-surface-light: rgba(41, 42, 45, 0.86);
-    --b3-theme-surface-lighter: rgba(41, 42, 45, 0.06);
+    --b3-theme-surface-lighter: rgba(110, 91, 91, 0.5); /* 线条色 */
 
     /* 文字颜色 */
     --b3-theme-on-primary: #fff;
@@ -66,6 +66,11 @@
     --b3-pdf-background6: #a3d3ff;
     --b3-pdf-background7: #f3c5ff;
     --b3-pdf-dark: #292a2b;
+}
+:root {
+    --QYL-blockquote: rgb(168, 145, 145);
+    --QYL-blockquote-background: rgb(58, 47, 47);
+    --QYL-blockquote-svg: rgb(114, 95, 95);
 }
 :root {
     --QYL-switch-close: var(--QYL-gray);
