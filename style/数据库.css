@@ -1,9 +1,8 @@
 :root {
-    --QYL-av-cell: #a0cbcc;
-    --QYL-av-cell-background: rgba(20, 159, 138, 0.4);
-    --QYL-av-cell-hover: #004142;
-    --QYL-av-cell-background-hover: rgba(144, 220, 207, 0.8);
-    --QYL-av-chip-color: rgb(215, 215, 215);
+    --QYL-av-cell: var(--b3-theme-primary);
+    --QYL-av-cell-background: var(--b3-theme-primary-lightest);
+    --QYL-av-cell-hover: var(--QYL-white);
+    --QYL-av-cell-background-hover: var(--b3-theme-primary);
     --QYL-av-chip-background1: rgba(255, 39, 39, 0.2);
     --QYL-av-chip-background2: rgba(255, 134, 64, 0.2);
     --QYL-av-chip-background3: rgba(48, 152, 255, 0.2);
