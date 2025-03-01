@@ -2,9 +2,24 @@
 
 ## 更新内容
 
-### v2.5.1
+### v2.5.2
 
-* 修复部分错误
+* 新增配色：墨翠、灰幕
+* 修复开启隐藏顶栏功能后当思源非全屏状态时，无法通过鼠标悬停呼出顶栏的问题，现在当思源不处于全屏状态时，只需变化窗口大小就会强制关闭隐藏顶栏功能
+* 修正`默认关闭主题动画`代码片段的错误（**如果有使用该代码片段，请重新复制**）
+* 修复块提示的颜色错误
+* 补全部分按钮的闪光效果
+* 修复代码块背景与编辑器背景对比度太低的问题
+* 修复下拉框颜色异常
+* 增加功能：关闭聚焦块高亮提示，开启后将关闭主题默认开启的聚焦块提示功能
+* 为块引用预览窗口添加毛玻璃效果
+* 修复搜索页面输入框样式错误
+* 修复开启标记挖空后，在搜索界面无法正确高亮关键词的问题，并重做搜索高亮效果
+* 修复PDF界面部分按钮样式异常
+* 修复开启毛玻璃效果后，部分场景输入框失去遮罩的问题
+* 对顶栏的窗口控制按钮进行微调
+* 修复点击任务列表图标意外触发文字输入的问题
+* 修复手机端Q按钮图标异常的问题
 
 ## 主要特性
 
@@ -70,6 +85,9 @@ setTimeout(() => {isChecked4 = true; enablehoverblockremind();}, 100);
 //默认开启鼠标所在超级块高亮提示
 setTimeout(() => {isChecked5 = true; enablesbremind();}, 100);
 
+//默认关闭聚焦块高亮提示
+setTimeout(() => {isChecked8 = true; enablecanclefocusblockremind();}, 100);
+
 //默认开启编辑器全宽显示
 setTimeout(() => {isChecked6 = true; enablefullwidth();}, 100);
 
@@ -77,7 +95,7 @@ setTimeout(() => {isChecked6 = true; enablefullwidth();}, 100);
 setTimeout(() => {isChecked7 = true; enablecolorfulfiletree();}, 100);
 
 //默认关闭主题动画
-setTimeout(() => {isChecked9 = true; enablecancleQYLanimation();}, 100);
+setTimeout(() => {isChecked9 = true; enablecancleQYLanimation();}, 2000);
 
 //默认开启毛玻璃效果
 setTimeout(() => {isChecked10 = true; enableQYLAero();}, 100);
@@ -90,6 +108,12 @@ setTimeout(() => {isChecked12 = true; enableQYLburgundy();}, 100);
 
 //默认使用玄青配色
 setTimeout(() => {isChecked13 = true; enableQYLxuanqing();}, 100);
+
+//默认使用墨翠配色
+setTimeout(() => {isChecked14 = true; enableQYLmocui();}, 100);
+
+//默认使用灰幕配色
+setTimeout(() => {isChecked15 = true; enableQYLhuimu();}, 100);
 ```
 
 ###### 比如，如果不需要默认开启标记挖空，就在上述代码中删除以下内容
@@ -100,6 +124,25 @@ setTimeout(() => {isChecked1 = true; enableMarkStyles();}, 100);
 ```
 
 ## 更新历史
+
+### v2.5.2
+
+* 新增配色：墨翠、灰幕
+* 修复开启隐藏顶栏功能后当思源非全屏状态时，无法通过鼠标悬停呼出顶栏的问题，现在当思源不处于全屏状态时，只需变化窗口大小就会强制关闭隐藏顶栏功能
+* 修正`默认关闭主题动画`代码片段的错误（**如果有使用该代码片段，请重新复制**）
+* 修复块提示的颜色错误
+* 补全部分按钮的闪光效果
+* 修复代码块背景与编辑器背景对比度太低的问题
+* 修复下拉框颜色异常
+* 增加功能：关闭聚焦块高亮提示，开启后将关闭主题默认开启的聚焦块提示功能
+* 为块引用预览窗口添加毛玻璃效果
+* 修复搜索页面输入框样式错误
+* 修复开启标记挖空后，在搜索界面无法正确高亮关键词的问题，并重做搜索高亮效果
+* 修复PDF界面部分按钮样式异常
+* 修复开启毛玻璃效果后，部分场景输入框失去遮罩的问题
+* 对顶栏的窗口控制按钮进行微调
+* 修复点击任务列表图标意外触发文字输入的问题
+* 修复手机端Q按钮图标异常的问题
 
 ### v2.5.1
 

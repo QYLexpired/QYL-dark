@@ -148,7 +148,7 @@ function addThemeToolBar() {
         QYLToolBar.className = "toolbar__item ariaLabel";
         QYLToolBar.style.width = "23.5px";
         QYLToolBar.style.height = "23.5px";
-        QYLToolBar.innerHTML = `<svg t="1740459440028" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="14055" width="24" height="24"><path d="M612.6 947.5c33 0 60-27 60-60s-27-60-60-60-60 27-60 60 27 60 60 60z" fill="#9aa0a6" p-id="14056"></path><path d="M597.9 891.1m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14057"></path><path d="M583 894.2m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14058"></path><path d="M568 896.6m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14059"></path><path d="M552.9 898.6m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14060"></path><path d="M537.8 899.9m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14061"></path><path d="M522.6 900.6m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14062"></path><path d="M507.4 900.7m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14063"></path><path d="M492.2 900.2m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14064"></path><path d="M477 899.1m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14065"></path><path d="M461.9 897.5m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14066"></path><path d="M446.9 895.2m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14067"></path><path d="M432 892.4m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14068"></path><path d="M417.2 888.9m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14069"></path><path d="M402.5 884.9m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14070"></path><path d="M388 880.4m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14071"></path><path d="M373.7 875.3m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14072"></path><path d="M359.6 869.6m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14073"></path><path d="M345.7 863.3m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14074"></path><path d="M332.1 856.6m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14075"></path><path d="M318.8 849.3m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14076"></path><path d="M305.7 841.5m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14077"></path><path d="M293 833.1m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14078"></path><path d="M280.6 824.3m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14079"></path><path d="M268.6 815m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14080"></path><path d="M256.9 805.3m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14081"></path><path d="M245.7 795.1m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14082"></path><path d="M234.8 784.4m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14083"></path><path d="M224.4 773.4m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14084"></path><path d="M214.4 761.9m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14085"></path><path d="M204.9 750.1m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14086"></path><path d="M195.7 737.9m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14087"></path><path d="M187.1 725.4m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14088"></path><path d="M179 712.5m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14089"></path><path d="M171.5 699.4m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14090"></path><path d="M164.4 685.9m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14091"></path><path d="M157.8 672.2m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14092"></path><path d="M151.8 658.3m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14093"></path><path d="M146.4 644m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14094"></path><path d="M141.6 629.6m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14095"></path><path d="M137.3 615m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14096"></path><path d="M133.5 600.3m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14097"></path><path d="M130.3 585.5m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14098"></path><path d="M127.8 570.5m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14099"></path><path d="M125.8 555.4m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14100"></path><path d="M124.5 540.3m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14101"></path><path d="M123.6 525.1m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14102"></path><path d="M123.4 509.9m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14103"></path><path d="M123.7 494.7m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14104"></path><path d="M124.8 479.5m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14105"></path><path d="M126.3 464.4m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14106"></path><path d="M128.5 449.4m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14107"></path><path d="M131.2 434.4m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14108"></path><path d="M134.4 419.6m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14109"></path><path d="M138.4 404.9m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14110"></path><path d="M142.9 390.4m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14111"></path><path d="M147.9 376m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14112"></path><path d="M153.5 361.9m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14113"></path><path d="M159.5 347.9m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14114"></path><path d="M166.3 334.3m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14115"></path><path d="M173.5 321m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14116"></path><path d="M181.3 307.9m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14117"></path><path d="M189.5 295.1m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14118"></path><path d="M198.2 282.6m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14119"></path><path d="M207.5 270.6m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14120"></path><path d="M217.2 258.9m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14121"></path><path d="M227.3 247.5m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14122"></path><path d="M237.8 236.6m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14123"></path><path d="M248.8 226.1m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14124"></path><path d="M260.2 216m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14125"></path><path d="M272 206.4m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14126"></path><path d="M284.1 197.2m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14127"></path><path d="M296.5 188.5m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14128"></path><path d="M309.4 180.3m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14129"></path><path d="M322.5 172.7m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14130"></path><path d="M335.9 165.5m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14131"></path><path d="M349.5 158.8m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14132"></path><path d="M363.5 152.8m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14133"></path><path d="M377.7 147.3m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14134"></path><path d="M392 142.3m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14135"></path><path d="M406.6 137.9m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14136"></path><path d="M421.3 134m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14137"></path><path d="M436.1 130.8m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14138"></path><path d="M451.1 128.2m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14139"></path><path d="M466.2 126.1m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14140"></path><path d="M481.3 124.6m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14141"></path><path d="M496.4 123.7m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14142"></path><path d="M511.6 123.3m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14143"></path><path d="M526.8 123.7m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14144"></path><path d="M542 124.6m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14145"></path><path d="M557.1 126m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14146"></path><path d="M572.2 128m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14147"></path><path d="M587.2 130.6m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14148"></path><path d="M602 133.9m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14149"></path><path d="M616.7 137.7m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14150"></path><path d="M631.3 142.1m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14151"></path><path d="M645.7 147m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14152"></path><path d="M659.9 152.4m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14153"></path><path d="M673.8 158.5m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14154"></path><path d="M687.5 165.1m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14155"></path><path d="M700.9 172.3m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14156"></path><path d="M714 239.9c33 0 60-27 60-60s-27-60-60-60-60 27-60 60c0 33.1 27 60 60 60z" fill="#9aa0a6" p-id="14157"></path><path d="M723.6 185.9m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14158"></path><path d="M732.8 192.2m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14159"></path><path d="M742 198.6m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14160"></path><path d="M750.9 205.5m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14161"></path><path d="M759.7 212.5m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14162"></path><path d="M768.2 219.8m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14163"></path><path d="M776.5 227.3m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14164"></path><path d="M784.6 235m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14165"></path><path d="M792.5 243m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14166"></path><path d="M800.2 251.2m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14167"></path><path d="M807.6 259.7m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14168"></path><path d="M814.8 268.2m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14169"></path><path d="M821.7 277.1m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14170"></path><path d="M828.3 286.1m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14171"></path><path d="M834.7 295.3m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14172"></path><path d="M840.8 304.7m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14173"></path><path d="M846.8 314.2m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14174"></path><path d="M852.3 324m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14175"></path><path d="M857.6 333.9m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14176"></path><path d="M862.6 344m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14177"></path><path d="M867.3 354.2m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14178"></path><path d="M871.7 364.4m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14179"></path><path d="M875.8 374.9m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14180"></path><path d="M879.6 385.4m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14181"></path><path d="M883.1 396.1m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14182"></path><path d="M886.2 406.9m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14183"></path><path d="M889.2 417.7m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14184"></path><path d="M891.6 428.6m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14185"></path><path d="M894 439.6m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14186"></path><path d="M895.8 450.7m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14187"></path><path d="M897.4 461.8m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14188"></path><path d="M898.8 472.9m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14189"></path><path d="M899.6 484.1m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14190"></path><path d="M900.4 495.3m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14191"></path><path d="M900.6 506.5m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14192"></path><path d="M900.6 517.7m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14193"></path><path d="M900.4 529m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14194"></path><path d="M899.6 540.2m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14195"></path><path d="M898.7 551.3m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14196"></path><path d="M897.4 562.5m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14197"></path><path d="M895.8 573.6m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14198"></path><path d="M893.9 584.6m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14199"></path><path d="M891.6 595.6m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14200"></path><path d="M889.1 606.5m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14201"></path><path d="M886.2 617.4m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14202"></path><path d="M883 628.1m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14203"></path><path d="M879.6 638.8m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14204"></path><path d="M875.7 649.3m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14205"></path><path d="M871.6 659.8m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14206"></path><path d="M867.2 670.1m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14207"></path><path d="M862.5 680.3m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14208"></path><path d="M857.5 690.3m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14209"></path><path d="M852.2 700.2m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14210"></path><path d="M846.7 710m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14211"></path><path d="M840.7 719.5m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14212"></path><path d="M834.6 728.9m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14213"></path><path d="M828.2 738.1m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14214"></path><path d="M821.5 747.1m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14215"></path><path d="M814.7 756m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14216"></path><path d="M807.4 764.6m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14217"></path><path d="M800.1 773m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14218"></path><path d="M792.3 781.2m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14219"></path><path d="M784.5 784.5m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14220"></path><path d="M776.6 776.6m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14221"></path><path d="M768.7 768.7m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14222"></path><path d="M760.7 760.7m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14223"></path><path d="M752.8 752.8m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14224"></path><path d="M744.9 744.9m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14225"></path><path d="M736.9 736.9m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14226"></path><path d="M729 729m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14227"></path><path d="M721.1 721.1m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14228"></path><path d="M713.1 713.1m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14229"></path><path d="M705.2 705.2m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14230"></path><path d="M697.3 697.3m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14231"></path><path d="M689.3 694.1m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14232"></path><path d="M690.9 702m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14233"></path><path d="M698.8 709.9m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14234"></path><path d="M706.8 717.9m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14235"></path><path d="M714.7 725.8m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14236"></path><path d="M722.6 733.7m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14237"></path><path d="M730.6 741.7m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14238"></path><path d="M738.5 749.6m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14239"></path><path d="M746.4 757.5m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14240"></path><path d="M754.4 765.5m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14241"></path><path d="M762.3 773.4m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14242"></path><path d="M770.2 781.3m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14243"></path><path d="M778.2 789.3m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14244"></path><path d="M786.1 797.2m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14245"></path><path d="M794 805.1m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14246"></path><path d="M802 813.1m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14247"></path><path d="M809.9 821m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14248"></path><path d="M817.8 828.9m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14249"></path><path d="M825.8 836.9m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14250"></path><path d="M833.7 844.8m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14251"></path><path d="M841.6 852.7m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14252"></path><path d="M849.6 860.7m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14253"></path><path d="M857.5 868.6m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14254"></path><path d="M865.4 876.5m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14255"></path><path d="M873.4 884.5m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14256"></path><path d="M881.3 892.4m-60 0a60 60 0 1 0 120 0 60 60 0 1 0-120 0Z" fill="#9aa0a6" p-id="14257"></path><path d="M889.1 960.2c33 0 60-27 60-60s-27-60-60-60-60 27-60 60 26.9 60 60 60z" fill="#9aa0a6" p-id="14258"></path></svg>`;
+        QYLToolBar.innerHTML = `<svg t="1740797651161" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4700" width="24" height="24"><path d="M896 0a128 128 0 0 1 128 128v768a128 128 0 0 1-128 128H128a128 128 0 0 1-128-128V128a128 128 0 0 1 128-128h768zM505.856 179.712c-97.664 0-174.72 31.36-230.272 95.872-53.76 60.928-79.744 139.776-79.744 237.44 0 96.768 25.984 175.616 79.744 236.544 55.552 62.72 132.608 94.976 230.272 94.976 66.304 0 122.752-14.336 170.24-43.008 23.296 31.36 46.592 64.512 70.784 99.456l62.72-55.552c-23.296-34.048-47.488-66.304-70.784-97.664 51.968-60.928 77.952-138.88 77.952-234.752 0-98.56-26.88-178.304-80.64-238.336-56.448-63.616-133.504-94.976-230.272-94.976z m0 86.016c68.096 0 120.96 21.504 157.696 66.304 35.84 43.904 54.656 103.936 54.656 180.992 0 65.408-13.44 118.272-40.32 159.488A2949.44 2949.44 0 0 0 581.12 564.096l-56.448 55.552c31.36 33.152 63.616 69.888 95.872 110.208-31.36 18.816-69.888 28.672-114.688 28.672-68.096 0-120.96-23.296-158.592-68.096-35.84-43.904-53.76-103.04-53.76-177.408 0-75.264 17.92-134.4 53.76-178.304 37.632-46.592 90.496-68.992 158.592-68.992z" fill="var(--b3-toolbar-color)" opacity=".9" p-id="4701"></path></svg>`;
         QYLToolBar.ariaLabel = "QYL主题设置";
         QYLToolBar.style.userSelect= 'none';
         var parentElement = toolbarVIP ? toolbarVIP.parentElement : (windowControls ? windowControls.parentElement : document.body);
@@ -177,11 +177,14 @@ let isChecked4 = false;
 let isChecked5 = false;
 let isChecked6 = false;
 let isChecked7 = false;
+let isChecked8 = false;
 let isChecked9 = false;
 let isChecked10 = false;
 let isChecked11 = false;
 let isChecked12 = false;
 let isChecked13 = false;
+let isChecked14 = false;
+let isChecked15 = false;
 
 function createSettingsWindow() {
     // 检查是否已经存在设置窗口
@@ -279,6 +282,17 @@ function createSettingsWindow() {
     label7.style.fontSize = '14px';
     label7.style.userSelect= 'none';
 
+    const checkbox8 = document.createElement('input');
+    checkbox8.type = 'checkbox';
+    checkbox8.id = 'focusblockremind-checkbox';
+    checkbox8.checked = isChecked8;
+
+    const label8 = document.createElement('label');
+    label8.htmlFor = 'focusblockremind-checkbox';
+    label8.textContent = ' 关闭聚焦块高亮提示';
+    label8.style.fontSize = '14px';
+    label8.style.userSelect= 'none';
+
     const checkbox9 = document.createElement('input');
     checkbox9.type = 'checkbox';
     checkbox9.id = 'QYLanimation-checkbox';
@@ -334,6 +348,28 @@ function createSettingsWindow() {
     label13.style.fontSize = '14px';
     label13.style.userSelect= 'none';
 
+    const checkbox14 = document.createElement('input');
+    checkbox14.type = 'checkbox';
+    checkbox14.id = 'QYLmocui-checkbox';
+    checkbox14.checked = isChecked14;
+
+    const label14 = document.createElement('label');
+    label14.htmlFor = 'QYLmocui-checkbox';
+    label14.textContent = ' 配色：墨翠';
+    label14.style.fontSize = '14px';
+    label14.style.userSelect= 'none';
+
+    const checkbox15 = document.createElement('input');
+    checkbox15.type = 'checkbox';
+    checkbox15.id = 'QYLhuimu-checkbox';
+    checkbox15.checked = isChecked15;
+
+    const label15 = document.createElement('label');
+    label15.htmlFor = 'QYLhuimu-checkbox';
+    label15.textContent = ' 配色：灰幕';
+    label15.style.fontSize = '14px';
+    label15.style.userSelect= 'none';
+
     // 将复选框和标签组合
     const QYLfunctionpair1 = document.createElement('div');
     QYLfunctionpair1.className = 'checkbox-label-pair';
@@ -370,6 +406,11 @@ function createSettingsWindow() {
     QYLfunctionpair7.appendChild(checkbox7);
     QYLfunctionpair7.appendChild(label7);
 
+    const QYLfunctionpair8 = document.createElement('div');
+    QYLfunctionpair8.className = 'checkbox-label-pair';
+    QYLfunctionpair8.appendChild(checkbox8);
+    QYLfunctionpair8.appendChild(label8);
+
     const QYLfunctionpair9 = document.createElement('div');
     QYLfunctionpair9.className = 'checkbox-label-pair';
     QYLfunctionpair9.appendChild(checkbox9);
@@ -395,12 +436,23 @@ function createSettingsWindow() {
     QYLfunctionpair13.appendChild(checkbox13);
     QYLfunctionpair13.appendChild(label13);
 
+    const QYLfunctionpair14 = document.createElement('div');
+    QYLfunctionpair14.className = 'checkbox-label-pair';
+    QYLfunctionpair14.appendChild(checkbox14);
+    QYLfunctionpair14.appendChild(label14);
+
+    const QYLfunctionpair15 = document.createElement('div');
+    QYLfunctionpair15.className = 'checkbox-label-pair';
+    QYLfunctionpair15.appendChild(checkbox15);
+    QYLfunctionpair15.appendChild(label15);
+
     // 将复选框和标签添加到设置窗口
     settingsWindow.appendChild(QYLfunctionpair1);
     settingsWindow.appendChild(QYLfunctionpair2);
     settingsWindow.appendChild(QYLfunctionpair3);
     settingsWindow.appendChild(QYLfunctionpair4);
     settingsWindow.appendChild(QYLfunctionpair5);
+    settingsWindow.appendChild(QYLfunctionpair8);
     settingsWindow.appendChild(QYLfunctionpair6);
     settingsWindow.appendChild(QYLfunctionpair7);
     settingsWindow.appendChild(QYLfunctionpair9);
@@ -408,6 +460,8 @@ function createSettingsWindow() {
     settingsWindow.appendChild(QYLfunctionpair11);
     settingsWindow.appendChild(QYLfunctionpair12);
     settingsWindow.appendChild(QYLfunctionpair13);
+    settingsWindow.appendChild(QYLfunctionpair14);
+    settingsWindow.appendChild(QYLfunctionpair15);
 
     // 将设置窗口添加到body
     document.body.appendChild(settingsWindow);
@@ -459,6 +513,16 @@ function createSettingsWindow() {
             enablesbremind();
         } else {
             disablesbremind();
+        }
+    });
+
+    // 关闭聚焦块高亮开关
+    checkbox8.addEventListener('change', function() {
+        isChecked8 = this.checked;
+        if (this.checked) {
+            enablecanclefocusblockremind();
+        } else {
+            disablecanclefocusblockremind();
         }
     });
 
@@ -517,6 +581,8 @@ function createSettingsWindow() {
         isChecked12 = this.checked;
         resetCheckburgundy();
         disableQYLxuanqing();
+        disableQYLmocui();
+        disableQYLhuimu();
         if (this.checked) {
             enableQYLburgundy();
         } else {
@@ -527,6 +593,8 @@ function createSettingsWindow() {
     //主题互斥-勃艮第
     function resetCheckburgundy() {
         isChecked13 = false;
+        isChecked14 = false;
+        isChecked15 = false;
     }
 
     // 玄青配色开关
@@ -534,6 +602,8 @@ function createSettingsWindow() {
         isChecked13 = this.checked;
         resetCheckxuanqing();
         disableQYLburgundy();
+        disableQYLmocui();
+        disableQYLhuimu();
         if (this.checked) {
             enableQYLxuanqing();
         } else {
@@ -544,6 +614,50 @@ function createSettingsWindow() {
     //主题互斥-玄青
     function resetCheckxuanqing() {
         isChecked12 = false;
+        isChecked14 = false;
+        isChecked15 = false;
+    }
+
+    // 墨翠配色开关
+    checkbox14.addEventListener('change', function() {
+        isChecked14 = this.checked;
+        resetCheckmocui();
+        disableQYLburgundy();
+        disableQYLxuanqing();
+        disableQYLhuimu();
+        if (this.checked) {
+            enableQYLmocui();
+        } else {
+            disableQYLmocui();
+        }
+    });
+
+    //主题互斥-墨翠
+    function resetCheckmocui() {
+        isChecked12 = false;
+        isChecked13 = false;
+        isChecked15 = false;
+    }
+
+    // 灰幕配色开关
+    checkbox15.addEventListener('change', function() {
+        isChecked15 = this.checked;
+        resetCheckhuimu();
+        disableQYLburgundy();
+        disableQYLxuanqing();
+        disableQYLmocui();
+        if (this.checked) {
+            enableQYLhuimu();
+        } else {
+            disableQYLhuimu();
+        }
+    });
+
+    //主题互斥-灰幕
+    function resetCheckhuimu() {
+        isChecked12 = false;
+        isChecked13 = false;
+        isChecked14 = false;
     }
 
     // ESC键关闭
@@ -589,7 +703,7 @@ function enableMarkStyles() {
         document.head.appendChild(styleSheet);
     }
     styleSheet.innerText = `
-        span[data-type~=mark],mark {
+        span[data-type~=mark] {
             background: transparent !important; }
         .b3-typography mark, .b3-typography span[data-type~=mark], 
         .protyle-wysiwyg mark, .protyle-wysiwyg span[data-type~=mark] {
@@ -736,6 +850,15 @@ function enabletoolbarhidden() {
         }
     `;
 }
+// 防止窗口化时隐藏顶栏后无法呼出
+function QYLcheckFullscreen() {
+    if (!document.fullscreenElement) {
+        disabletoolbarhidden();
+        isChecked3 = false;
+    }
+}
+window.addEventListener("resize", QYLcheckFullscreen);
+QYLcheckFullscreen();
 
 // 关闭隐藏顶栏功能
 function disabletoolbarhidden() {
@@ -755,7 +878,7 @@ function enablehoverblockremind() {
     }
     styleSheet.innerText = `
         .p:hover {
-            box-shadow: 2px 2px 6px rgba(255, 255, 255, 0.15), -2px -2px 6px rgba(255, 255, 255, 0.15), 0 0 12px rgba(255, 255, 255, 0.1) !important;
+            box-shadow: var(--b3-dialog-shadow) !important;
             transition: 0.3s !important;
         }
     `;
@@ -779,7 +902,7 @@ function enablesbremind() {
     }
     styleSheet.innerText = `
         .sb:hover {
-            box-shadow: 2px 2px 6px rgba(255, 255, 255, 0.15), -2px -2px 6px rgba(255, 255, 255, 0.15), 0 0 12px rgba(255, 255, 255, 0.1) !important;
+            box-shadow: var(--b3-dialog-shadow) !important;
             transition: 0.3s !important;
         }
     `;
@@ -788,6 +911,27 @@ function enablesbremind() {
 // 关闭超级块范围提示功能
 function disablesbremind() {
     const styleSheet = document.getElementById("sbremind-style");
+    if (styleSheet) {
+        styleSheet.innerText = '';
+    }
+}
+
+// 关闭聚焦块高亮
+function enablecanclefocusblockremind() {
+    let styleSheet = document.getElementById("canclefocusblockremind-style");
+    if (!styleSheet) {
+        styleSheet = document.createElement("style");
+        styleSheet.id = "canclefocusblockremind-style";
+        document.head.appendChild(styleSheet);
+    }
+    styleSheet.innerText = `
+        .p.highlight, .p.highlight:hover { box-shadow: none !important; transition: none !important; }
+    `;
+}
+
+// 取消关闭聚焦块高亮
+function disablecanclefocusblockremind() {
+    const styleSheet = document.getElementById("canclefocusblockremind-style");
     if (styleSheet) {
         styleSheet.innerText = '';
     }
@@ -1061,8 +1205,9 @@ function enableQYLAero() {
         .config__tab-container .b3-label:not(.b3-label--inner) {
             box-shadow: none;
         }
-        .b3-text-field, .pcr-app .pcr-interaction .pcr-result, .b3-select {
-            background-color: var(--b3-theme-background) !important;
+        .b3-text-field:not(#searchInput, .b3-form__icon-input), .pcr-app .pcr-interaction .pcr-result, .b3-select {
+            background-color: var(--QYL-filter-background);
+            backdrop-filter: var(--QYL-Aero-filter);
         }
         /* 命令面板毛玻璃 */
         div[data-key="dialog-commandpanel"] .b3-list.b3-list--background.search__list {
@@ -1071,9 +1216,15 @@ function enableQYLAero() {
         div[data-key="dialog-commandpanel"] .b3-dialog__body .fn__flex-column .b3-form__icon.search__header {
             background-color: var(--QYL-filter-wrap-background);
         }
+        div[data-key="dialog-commandpanel"] .b3-dialog__body .fn__flex-column .b3-form__icon.search__header .b3-text-field.b3-text-field--text {
+            background-color: rgba(255, 0, 0, 0) !important;
+        }
         /* 搜索面板毛玻璃 */
         div[data-key="dialog-globalsearch"] .b3-dialog__body .b3-form__icon.search__header {
             background-color: var(--QYL-filter-wrap-background);
+        }
+        div[data-key="dialog-globalsearch"] .b3-form__icon.search__header .b3-text-field.b3-text-field--text {
+            background-color: rgba(255, 0, 0, 0) !important;
         }
         div[data-key="dialog-globalsearch"] .search__header[id="criteria"] {
             background-color: var(--QYL-filter-wrap-background);
@@ -1197,6 +1348,17 @@ function enableQYLAero() {
             backdrop-filter: var(--QYL-Aero-filter);
             color: var(--b3-theme-on-background)
         }
+        /* 块引用预览毛玻璃 */
+        .block__popover.block__popover--open {
+            background-color: var(--QYL-filter-background);
+            backdrop-filter: var(--QYL-Aero-filter);
+        }
+        .block__popover.block__popover--open .block__icons {
+            background-color: rgba(255, 0, 0, 0) !important;
+        }
+        .block__popover.block__popover--open .block__edit.fn__flex-1.protyle, .block__popover.block__popover--open .block__edit.fn__flex-1.protyle .protyle-breadcrumb {
+            background-color: rgba(255, 0, 0, 0) !important;
+        }
     `;
 }
 
@@ -1222,24 +1384,20 @@ function enablecancleQYLcolorfultag() {
             border: none;
             padding: 3px 5px;
             font-size: 80%;
-            color: #ff5f6f;
-            background-color: rgba(255, 95, 111, 0.3);
+            color: var(--b3-theme-primary);
+            background-color: var(--b3-theme-primary-lightest);
             transition: var(--b3-transition);
         }
         .protyle-wysiwyg [data-node-id] span[data-type~=tag]:is(:nth-of-type(8n+1), :nth-of-type(8n+2), :nth-of-type(8n+3), :nth-of-type(8n+4), :nth-of-type(8n+5), :nth-of-type(8n+6), :nth-of-type(8n+7), :nth-of-type(8n))::before {
             content: "#";
-            color: #ff5f6f;
+            color: var(--b3-theme-primary);
             margin-right: 5px;
             position: relative;
             top: 0.5px;
             transition: var(--b3-transition);
         }
-        .protyle-wysiwyg [data-node-id] span[data-type~=tag]:is(:nth-of-type(8n+1), :nth-of-type(8n+2), :nth-of-type(8n+3), :nth-of-type(8n+4), :nth-of-type(8n+5), :nth-of-type(8n+6), :nth-of-type(8n+7), :nth-of-type(8n)):hover {
-            background-color: rgba(255, 95, 111, 0.5);
-            transition: var(--b3-background-transition);
-        }
         :is(.fn__code, .b3-typography code, .b3-typography span[data-type~=code], .protyle-wysiwyg code, .protyle-wysiwyg span[data-type~=code]):is(:nth-of-type(8n+1), :nth-of-type(8n+2), :nth-of-type(8n+3), :nth-of-type(8n+4), :nth-of-type(8n+5), :nth-of-type(8n+6), :nth-of-type(8n+7), :nth-of-type(8n)) {
-            color: rgb(226, 115, 115);
+            color: var(--b3-theme-on-background);
         }
     `;
 }
@@ -1291,10 +1449,10 @@ function enableQYLburgundy() {
             --b3-list-hover: var(--QYL-hover); /* 大部分悬停背景色 */
             --b3-toolbar-hover: var(--QYL-hover); /*顶部工具栏悬停背景色 */
             --b3-list-icon-hover: var(--QYL-hover-hover); /* 文档树按钮悬停色、面包屑栏按钮悬停色 */
-            --b3-theme-primary: #742727; 
-            --b3-theme-primary-light: rgba(103, 47, 47, 0.5); /* 主色0.5透明度 */
-            --b3-theme-primary-lighter: rgba(103, 47, 47, 0.35); /* 主色0.3透明度 */
-            --b3-theme-primary-lightest: rgba(103, 47, 47, 0.1); /* 主色0.1透明度 */
+            --b3-theme-primary: #a34c4c; 
+            --b3-theme-primary-light: rgba(163, 76, 76, 0.5); /* 主色0.5透明度 */
+            --b3-theme-primary-lighter: rgba(163, 76, 76, 0.35); /* 主色0.3透明度 */
+            --b3-theme-primary-lightest: rgba(163, 76, 76, 0.12); /* 主色0.1透明度 */
             --b3-protyle-inline-mark-background: rgba(81, 150, 92, 0.8);/* 标记色 */
             --b3-protyle-inline-mark-color: #dadada; /* 标记文字色 */
             --b3-border-color: var(--b3-theme-surface-lighter); /* 线条色 */
@@ -1348,6 +1506,10 @@ function enableQYLburgundy() {
             --QYL-filter-wrap-background-theme: rgba(22, 15, 15, 0.6);
             --QYL-filter-fix-background-theme: rgba(22, 15, 15, 0.8);
         }
+        :root {
+            --QYL-account-background1: linear-gradient(to top, #300909, #2d070c, #2a060e, #270410, #240211, #240414, #240517, #240719, #280b1e, #2c0e23, #311028, #35132e);
+            --QYL-account-background2: linear-gradient(to top, #300909, #2d070c, #2a060e, #270410, #240211, #240414, #240517, #240719, #280b1e, #2c0e23, #311028, #35132e);
+        }
     `;
 }
 
@@ -1398,10 +1560,10 @@ function enableQYLxuanqing() {
             --b3-list-hover: var(--QYL-hover); /* 大部分悬停背景色 */
             --b3-toolbar-hover: var(--QYL-hover); /*顶部工具栏悬停背景色 */
             --b3-list-icon-hover: var(--QYL-hover-hover); /* 文档树按钮悬停色、面包屑栏按钮悬停色 */
-            --b3-theme-primary: #403d94; 
-            --b3-theme-primary-light: rgba(64, 61, 148, 0.5); /* 主色0.5透明度 */
-            --b3-theme-primary-lighter: rgba(64, 61, 148, 0.3); /* 主色0.3透明度 */
-            --b3-theme-primary-lightest: rgba(64, 61, 148, 0.1); /* 主色0.1透明度 */
+            --b3-theme-primary: #5753ad; 
+            --b3-theme-primary-light: rgba(87, 83, 173, 0.5); /* 主色0.5透明度 */
+            --b3-theme-primary-lighter: rgba(87, 83, 173, 0.35); /* 主色0.3透明度 */
+            --b3-theme-primary-lightest: rgba(87, 83, 173, 0.12); /* 主色0.1透明度 */
             --b3-protyle-inline-mark-background: rgba(81, 150, 92, 0.8);/* 标记色 */
             --b3-protyle-inline-mark-color: #dadada; /* 标记文字色 */
             --b3-border-color: var(--b3-theme-surface-lighter); /* 线条色 */
@@ -1455,12 +1617,238 @@ function enableQYLxuanqing() {
             --QYL-filter-wrap-background-theme: rgba(34, 35, 44, 0.6);
             --QYL-filter-fix-background-theme: rgba(34, 35, 44, 0.8);
         }
+        :root {
+            --QYL-account-background1: linear-gradient(to top, #151d32, #122033, #102233, #0f2433, #0f2632, #122833, #152934, #182b35, #1c2d37, #212e3a, #25303c, #29323e);
+            --QYL-account-background2: linear-gradient(to top, #151d32, #122033, #102233, #0f2433, #0f2632, #122833, #152934, #182b35, #1c2d37, #212e3a, #25303c, #29323e);
+        }
     `;
 }
 
 // 关闭玄青配色
 function disableQYLxuanqing() {
     const styleSheet = document.getElementById("QYLxuanqing-style");
+    if (styleSheet) {
+        styleSheet.innerText = '';
+    }
+}
+
+// 开启墨翠配色
+function enableQYLmocui() {
+    let styleSheet = document.getElementById("QYLmocui-style");
+    if (!styleSheet) {
+        styleSheet = document.createElement("style");
+        styleSheet.id = "QYLmocui-style";
+        document.head.appendChild(styleSheet);
+    }
+    styleSheet.innerText = `
+        :root {
+            /* 主色 */
+            --b3-theme-background: #282b27;
+            --b3-theme-background-light:#393d38; /* 编辑器较多变浅（不透明） */
+            --b3-theme-surface: #30342e;
+            --b3-theme-surface-light: rgba(48, 52, 46, 0.86);
+            --b3-theme-surface-lighter: rgba(64, 69, 61, 0.5);; /* 线条色 */
+
+            /* 文字颜色 */
+            --b3-theme-on-primary: #fff;
+            --b3-theme-on-secondary: #fff;
+            --b3-theme-on-background: #b5b5b5;
+            --b3-theme-on-surface: #9aa0a6;
+            --b3-theme-on-surface-light: #bababa;
+            --b3-theme-on-error: #fff;
+
+            /* 容器阴影 */
+            --b3-point-shadow: 0 2px 4px rgba(122, 122, 122, 0.3), 0 4px 6px rgba(122, 122, 122, 0.3);
+            --b3-dialog-shadow: 0 2px 4px rgba(122, 122, 122, 0.3), 0 4px 6px rgba(122, 122, 122, 0.3);
+            --b3-button-shadow: 0 2px 4px rgba(122, 122, 122, 0.3), 0 4px 6px rgba(122, 122, 122, 0.3);
+            --b3-light-shadow: 0 4px 6px rgba(122, 122, 122, 0.3);
+        }
+        :root {
+            --QYL-hover: rgba(61, 99, 52, 0.6); /* 主要悬停色 */
+            --QYL-hover-hover: rgba(61, 99, 52, 0.7);/* 主要悬停色加深 */
+            --QYL-hover-light: rgba(61, 99, 52, 0.1);/* 主要悬停色变浅 */
+            --QYL-filetree: var(--b3-theme-background); /* 文档树、反链等背景色 */
+            --b3-list-hover: var(--QYL-hover); /* 大部分悬停背景色 */
+            --b3-toolbar-hover: var(--QYL-hover); /*顶部工具栏悬停背景色 */
+            --b3-list-icon-hover: var(--QYL-hover-hover); /* 文档树按钮悬停色、面包屑栏按钮悬停色 */
+            --b3-theme-primary: #528450; 
+            --b3-theme-primary-light: rgba(82, 132, 80, 0.514);; /* 主色0.5透明度 */
+            --b3-theme-primary-lighter: rgba(82, 132, 80, 0.3); /* 主色0.3透明度 */
+            --b3-theme-primary-lightest: rgba(82, 132, 80, 0.12); /* 主色0.1透明度 */
+            --b3-protyle-inline-mark-background: rgba(81, 150, 92, 0.8);/* 标记色 */
+            --b3-protyle-inline-mark-color: #dadada; /* 标记文字色 */
+            --b3-border-color: var(--b3-theme-surface-lighter); /* 线条色 */
+            --b3-scroll-color: rgb(57, 66, 57); /* 滚动条颜色 */
+            --QYL-white: #fff; /* 通用白 */
+            --QYL-black: #171717; /* 通用黑 */
+            --QYL-gray: #bfbfbf; /* 通用灰 */
+            --b3-toolbar-blur-background: #41463f; /* 失焦颜色 */
+            --QYL-filter-background-forQsettings: var(--b3-theme-background);
+
+            /* 圆角矩形 */
+            --b3-border-radius: 10px;
+            --b3-border-radius-b: 10px;
+            --b3-border-radius-q: 16px;
+            
+            /* 动画效果 */
+            --b3-transition: 0.2s ease-in-out;
+            --b3-transition-slow: 0.4s ease-in-out;
+            --b3-width-transition: width 0.2s ease-in-out;
+            --b3-color-transition: color 0.2s ease-in-out;
+            --b3-background-transition: background 0.2s ease-in-out;
+
+            /* PDF */
+            --b3-pdf-selection: #94ff71;
+            --sidebar-width: 200px;
+            --b3-pdf-offset: 0;
+            --b3-pdf-background1: #ffc3c3;
+            --b3-pdf-background2: #ffcba5;
+            --b3-pdf-background3: #ffda83;
+            --b3-pdf-background4: #b1eda2;
+            --b3-pdf-background5: #85efe6;
+            --b3-pdf-background6: #a3d3ff;
+            --b3-pdf-background7: #f3c5ff;
+            --b3-pdf-dark: #292a2b;
+        }
+        :root {
+            --QYL-blockquote: rgb(118, 122, 118);
+            --QYL-blockquote-background: rgb(49, 58, 49);
+            --QYL-blockquote-svg: rgb(88, 94, 88);
+        }
+        :root {
+            --QYL-switch-close: var(--QYL-gray);
+            --QYL-switch-close-background: rgb(67, 75, 68);
+            --QYL-input-border: rgb(79, 108, 83);
+            --QYL-input-border-hover: var(--b3-theme-primary);
+            --b3-switch-checked-background: var(--b3-theme-primary);
+            --b3-switch-checked: var(--QYL-gray);
+        }
+        :root {
+            --QYL-filter-background-theme: rgba(31, 38, 31, 0.5);
+            --QYL-filter-wrap-background-theme: rgba(31, 38, 31, 0.6);
+            --QYL-filter-fix-background-theme: rgba(31, 38, 31, 0.8);
+        }
+        :root {
+            --QYL-account-background1: linear-gradient(to top, #152013, #182415, #1b2817, #1e2d19, #22311b, #24331d, #26351f, #283721, #293723, #293726, #2a3628, #2b362a);
+            --QYL-account-background2: linear-gradient(to top, #152013, #182415, #1b2817, #1e2d19, #22311b, #24331d, #26351f, #283721, #293723, #293726, #2a3628, #2b362a);
+        }
+    `;
+}
+
+// 关闭墨翠配色
+function disableQYLmocui() {
+    const styleSheet = document.getElementById("QYLmocui-style");
+    if (styleSheet) {
+        styleSheet.innerText = '';
+    }
+}
+
+// 开启灰幕配色
+function enableQYLhuimu() {
+    let styleSheet = document.getElementById("QYLhuimu-style");
+    if (!styleSheet) {
+        styleSheet = document.createElement("style");
+        styleSheet.id = "QYLhuimu-style";
+        document.head.appendChild(styleSheet);
+    }
+    styleSheet.innerText = `
+        :root {
+            /* 主色 */
+            --b3-theme-background: #2f2f2f;
+            --b3-theme-background-light:#444444; /* 编辑器较多变浅（不透明） */
+            --b3-theme-surface: #383838;
+            --b3-theme-surface-light: rgba(56, 56, 56, 0.86);
+            --b3-theme-surface-lighter: rgba(92, 92, 92, 0.5); /* 线条色 */
+
+            /* 文字颜色 */
+            --b3-theme-on-primary: #fff;
+            --b3-theme-on-secondary: #fff;
+            --b3-theme-on-background: #b5b5b5;
+            --b3-theme-on-surface: #9aa0a6;
+            --b3-theme-on-surface-light: #bababa;
+            --b3-theme-on-error: #fff;
+
+            /* 容器阴影 */
+            --b3-point-shadow: 0 2px 4px rgba(122, 122, 122, 0.3), 0 4px 6px rgba(122, 122, 122, 0.3);
+            --b3-dialog-shadow: 0 2px 4px rgba(122, 122, 122, 0.3), 0 4px 6px rgba(122, 122, 122, 0.3);
+            --b3-button-shadow: 0 2px 4px rgba(122, 122, 122, 0.3), 0 4px 6px rgba(122, 122, 122, 0.3);
+            --b3-light-shadow: 0 4px 6px rgba(122, 122, 122, 0.3);
+        }
+        :root {
+            --QYL-hover: rgba(121, 116, 86, 0.6); /* 主要悬停色 */
+            --QYL-hover-hover: rgba(121, 116, 86, 0.8);/* 主要悬停色加深 */
+            --QYL-hover-light: rgba(121, 116, 86, 0.1);/* 主要悬停色变浅 */
+            --QYL-filetree: var(--b3-theme-background); /* 文档树、反链等背景色 */
+            --b3-list-hover: var(--QYL-hover); /* 大部分悬停背景色 */
+            --b3-toolbar-hover: var(--QYL-hover); /*顶部工具栏悬停背景色 */
+            --b3-list-icon-hover: var(--QYL-hover-hover); /* 文档树按钮悬停色、面包屑栏按钮悬停色 */
+            --b3-theme-primary: #877b5d; 
+            --b3-theme-primary-light: rgba(135, 123, 93, 0.5); /* 主色0.5透明度 */
+            --b3-theme-primary-lighter: rgba(135, 123, 93, 0.35); /* 主色0.3透明度 */
+            --b3-theme-primary-lightest: rgba(135, 123, 93, 0.1); /* 主色0.1透明度 */
+            --b3-protyle-inline-mark-background: rgba(81, 150, 92, 0.8);/* 标记色 */
+            --b3-protyle-inline-mark-color: #dadada; /* 标记文字色 */
+            --b3-border-color: var(--b3-theme-surface-lighter); /* 线条色 */
+            --b3-scroll-color: rgb(90, 85, 79); /* 滚动条颜色 */
+            --QYL-white: #fff; /* 通用白 */
+            --QYL-black: #171717; /* 通用黑 */
+            --QYL-gray: #bfbfbf; /* 通用灰 */
+            --b3-toolbar-blur-background: #4e4e4e; /* 失焦颜色 */
+            --QYL-filter-background-forQsettings: var(--b3-theme-background);
+
+            /* 圆角矩形 */
+            --b3-border-radius: 10px;
+            --b3-border-radius-b: 10px;
+            --b3-border-radius-q: 16px;
+            
+            /* 动画效果 */
+            --b3-transition: 0.2s ease-in-out;
+            --b3-transition-slow: 0.4s ease-in-out;
+            --b3-width-transition: width 0.2s ease-in-out;
+            --b3-color-transition: color 0.2s ease-in-out;
+            --b3-background-transition: background 0.2s ease-in-out;
+
+            /* PDF */
+            --b3-pdf-selection: #94ff71;
+            --sidebar-width: 200px;
+            --b3-pdf-offset: 0;
+            --b3-pdf-background1: #ffc3c3;
+            --b3-pdf-background2: #ffcba5;
+            --b3-pdf-background3: #ffda83;
+            --b3-pdf-background4: #b1eda2;
+            --b3-pdf-background5: #85efe6;
+            --b3-pdf-background6: #a3d3ff;
+            --b3-pdf-background7: #f3c5ff;
+            --b3-pdf-dark: #292a2b;
+        }
+        :root {
+            --QYL-blockquote: rgb(149, 141, 132);
+            --QYL-blockquote-background: rgb(63, 62, 59);
+            --QYL-blockquote-svg: rgb(88, 86, 82);
+        }
+        :root {
+            --QYL-switch-close: var(--QYL-gray);
+            --QYL-switch-close-background: rgb(75, 73, 67);
+            --QYL-input-border: rgb(108, 103, 79);
+            --QYL-input-border-hover: var(--b3-theme-primary);
+            --b3-switch-checked-background: var(--b3-theme-primary);
+            --b3-switch-checked: var(--QYL-gray);
+        }
+        :root {
+            --QYL-filter-background-theme: rgba(59, 59, 59, 0.5);
+            --QYL-filter-wrap-background-theme: rgba(59, 59, 59, 0.6);
+            --QYL-filter-fix-background-theme: rgba(59, 59, 59, 0.8);
+        }
+        :root {
+            --QYL-account-background1: linear-gradient(to top, #272721, #292923, #2c2b24, #2e2e26, #313028, #36322b, #3b352f, #3f3733, #433b3b, #454042, #474547, #4a4a4a);
+            --QYL-account-background2: linear-gradient(to top, #272721, #292923, #2c2b24, #2e2e26, #313028, #36322b, #3b352f, #3f3733, #433b3b, #454042, #474547, #4a4a4a);
+        }
+    `;
+}
+
+// 关闭灰幕配色
+function disableQYLhuimu() {
+    const styleSheet = document.getElementById("QYLhuimu-style");
     if (styleSheet) {
         styleSheet.innerText = '';
     }
