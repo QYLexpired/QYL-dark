@@ -2,10 +2,11 @@
 
 ## 更新内容
 
-### v2.5.5
+### v2.5.6
 
-* 增加部分动效
-* 微调斜杠菜单
+###### * 重要更新：现在Q按钮的设置将自动保存，无需再使用代码片段（若之前有使用，请删除） *
+* 回调斜杠菜单
+* 优化PDF预览页面
 
 ## 主要特性
 
@@ -51,65 +52,13 @@
 |​`table-color`​|表格块/文档|​`红色` ​`橙色` ​`绿色` ​`蓝色` ​`紫色` ​`粉色`​|设置该表格块/文档表格的颜色|
 |​`blankblock-remind`​|任意块/文档|​`默认`​ `开启`​|显示该块/该文档空块的“空空如也”提示|
 
-## 重要提醒
-
-#### 本主题默认不会保存Q按钮的设置，如果想要保存特定的设置，可按需启用以下JS代码片段(不需要的部分整体删除即可)
-
-```
-//默认开启标记挖空
-setTimeout(() => {isChecked1 = true; enableMarkStyles();}, 100);
-
-//默认开启文档树缩进线
-setTimeout(() => {isChecked2 = true; enableIndentStyle();}, 100);
-
-//默认开启隐藏顶栏
-setTimeout(() => {isChecked3 = true; enabletoolbarhidden();}, 100);
-
-//默认开启鼠标所在块高亮提示
-setTimeout(() => {isChecked4 = true; enablehoverblockremind();}, 100);
-
-//默认开启鼠标所在超级块高亮提示
-setTimeout(() => {isChecked5 = true; enablesbremind();}, 100);
-
-//默认关闭聚焦块高亮提示
-setTimeout(() => {isChecked8 = true; enablecanclefocusblockremind();}, 100);
-
-//默认开启编辑器全宽显示
-setTimeout(() => {isChecked6 = true; enablefullwidth();}, 100);
-
-//默认开启多彩文档树
-setTimeout(() => {isChecked7 = true; enablecolorfulfiletree();}, 100);
-
-//默认关闭主题动画
-setTimeout(() => {isChecked9 = true; enablecancleQYLanimation();}, 2000);
-
-//默认开启毛玻璃效果
-setTimeout(() => {isChecked10 = true; enableQYLAero();}, 100);
-
-//默认关闭多彩标签和多彩行级代码
-setTimeout(() => {isChecked11 = true; enablecancleQYLcolorfultag();}, 100);
-
-//默认使用勃艮第配色
-setTimeout(() => {isChecked12 = true; enableQYLburgundy();}, 100);
-
-//默认使用玄青配色
-setTimeout(() => {isChecked13 = true; enableQYLxuanqing();}, 100);
-
-//默认使用墨翠配色
-setTimeout(() => {isChecked14 = true; enableQYLmocui();}, 100);
-
-//默认使用灰幕配色
-setTimeout(() => {isChecked15 = true; enableQYLhuimu();}, 100);
-```
-
-###### 比如，如果不需要默认开启标记挖空，就在上述代码中删除以下内容
-
-```
-//默认开启标记挖空
-setTimeout(() => {isChecked1 = true; enableMarkStyles();}, 100);
-```
-
 ## 更新历史
+
+### v2.5.6
+
+* 重要更新：现在Q按钮的设置将自动保存，无需再使用代码片段（若之前有使用，请删除）
+* 回调斜杠菜单
+* 优化PDF预览页面
 
 ### v2.5.5
 

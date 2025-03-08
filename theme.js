@@ -1,3 +1,39 @@
+//思源API
+async function putFile(path, content = '', isDir = false) {
+    const formData = new FormData();
+    formData.append("path", path);
+    formData.append("isDir", isDir)
+    formData.append("file", new Blob([content]));
+    const result = await fetch("/api/file/putFile", { // 写入js到本地
+        method: "POST",
+        body: formData,
+    });
+    const json = await result.json();
+    return json;
+}
+async function getFile(path) {
+    return fetch("/api/file/getFile", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            path,
+        }),
+    }).then((response) => {
+        if (response.ok) {
+            return response.text();
+        } else {
+            throw new Error("Failed to get file content");
+        }
+    }).catch((error) => {
+        console.error(error);
+    });
+}
+
+
+
+
 // 块提示
 document.addEventListener('selectionchange', function() {
     const selection = window.getSelection();
@@ -480,199 +516,226 @@ function createSettingsWindow() {
     // 将设置窗口添加到body
     document.body.appendChild(settingsWindow);
 
-    // 标记挖空开关
-    checkbox1.addEventListener('change', function() {
-        isChecked1 = this.checked;
-        if (this.checked) {
-            enableMarkStyles();
-        } else {
-            disableMarkStyles();
-        }
-    });
 
-    // 文档树缩进线开关
-    checkbox2.addEventListener('change', function() {
-        isChecked2 = this.checked;
-        if (this.checked) {
-            enableIndentStyle();
-        } else {
-            disableIndentStyle();
-        }
-    });
+// 保存配置到QYLdarkconfig.json
+async function saveConfig() {
+    const formData = new FormData();
+    formData.append('path', '/data/snippets/QYLdarkconfig.json');
+    formData.append('isDir', 'false');
+    formData.append('modTime', Math.floor(Date.now() / 1000));
+    formData.append('file', new Blob([JSON.stringify({
+        isChecked1: checkbox1.checked,
+        isChecked2: checkbox2.checked,
+        isChecked3: checkbox3.checked,
+        isChecked4: checkbox4.checked,
+        isChecked5: checkbox5.checked,
+        isChecked6: checkbox6.checked,
+        isChecked7: checkbox7.checked,
+        isChecked8: checkbox8.checked,
+        isChecked9: checkbox9.checked,
+        isChecked10: checkbox10.checked,
+        isChecked11: checkbox11.checked,
+        isChecked12: checkbox12.checked,
+        isChecked13: checkbox13.checked,
+        isChecked14: checkbox14.checked,
+        isChecked15: checkbox15.checked
+    })], { type: 'application/json' }), 'QYLdarkconfig.json');
 
-    // 隐藏顶栏开关
-    checkbox3.addEventListener('change', function() {
-        isChecked3 = this.checked;
-        if (this.checked) {
-            enabletoolbarhidden();
-        } else {
-            disabletoolbarhidden();
-        }
-    });
+    return fetch('/api/file/putFile', { method: 'POST', body: formData });
+}
 
-    // 鼠标所在块高亮开关
-    checkbox4.addEventListener('change', function() {
-        isChecked4 = this.checked;
-        if (this.checked) {
-            enablehoverblockremind();
-        } else {
-            disablehoverblockremind();
-        }
-    });
-
-    // 超级块范围提示开关
-    checkbox5.addEventListener('change', function() {
-        isChecked5 = this.checked;
-        if (this.checked) {
-            enablesbremind();
-        } else {
-            disablesbremind();
-        }
-    });
-
-    // 关闭聚焦块高亮开关
-    checkbox8.addEventListener('change', function() {
-        isChecked8 = this.checked;
-        if (this.checked) {
-            enablecanclefocusblockremind();
-        } else {
-            disablecanclefocusblockremind();
-        }
-    });
-
-    // 全宽显示开关
-    checkbox6.addEventListener('change', function() {
-        isChecked6 = this.checked;
-        if (this.checked) {
-            enablefullwidth();
-        } else {
-            disablefullwidth();
-        }
-    });
-
-    // 多彩文档树开关
-    checkbox7.addEventListener('change', function() {
-        isChecked7 = this.checked;
-        if (this.checked) {
-            enablecolorfulfiletree();
-        } else {
-            disablecolorfulfiletree();
-        }
-    });
-
-    // 关闭主题动画开关
-    checkbox9.addEventListener('change', function() {
-        isChecked9 = this.checked;
-        if (this.checked) {
-            enablecancleQYLanimation();
-        } else {
-            disablecancleQYLanimation();
-        }
-    });
-
-    // 毛玻璃效果开关
-    checkbox10.addEventListener('change', function() {
-        isChecked10 = this.checked;
-        if (this.checked) {
-            enableQYLAero();
-        } else {
-            disableQYLAreo();
-        }
-    });
-
-    // 关闭多彩标签和多彩行级代码开关
-    checkbox11.addEventListener('change', function() {
-        isChecked11 = this.checked;
-        if (this.checked) {
-            enablecancleQYLcolorfultag();
-        } else {
-            disablecancleQYLcolorfultag();
-        }
-    });
-
-    // 勃艮第配色开关
-    checkbox12.addEventListener('change', function() {
-        isChecked12 = this.checked;
-        resetCheckburgundy();
-        disableQYLxuanqing();
-        disableQYLmocui();
-        disableQYLhuimu();
-        if (this.checked) {
-            enableQYLburgundy();
-        } else {
-            disableQYLburgundy();
-        }
-    });
-
-    //主题互斥-勃艮第
-    function resetCheckburgundy() {
-        isChecked13 = false;
-        isChecked14 = false;
-        isChecked15 = false;
+// 标记挖空开关
+checkbox1.addEventListener('change', async function() {
+    const state = this.checked;
+    state ? enableMarkStyles() : disableMarkStyles();
+    state ? isChecked1 = true : isChecked1 = false;
+    try {
+        if ((await (await saveConfig()).json()).code !== 0) throw 0;
+    } catch {
+        this.checked = !state;
     }
+});
 
-    // 玄青配色开关
-    checkbox13.addEventListener('change', function() {
-        isChecked13 = this.checked;
-        resetCheckxuanqing();
-        disableQYLburgundy();
-        disableQYLmocui();
-        disableQYLhuimu();
-        if (this.checked) {
-            enableQYLxuanqing();
-        } else {
-            disableQYLxuanqing();
-        }
-    });
-
-    //主题互斥-玄青
-    function resetCheckxuanqing() {
-        isChecked12 = false;
-        isChecked14 = false;
-        isChecked15 = false;
+// 文档树缩进线开关
+checkbox2.addEventListener('change', async function() {
+    const state = this.checked;
+    state ? enableIndentStyle() : disableIndentStyle();
+    state ? isChecked2 = true : isChecked2 = false;
+    try {
+        if ((await (await saveConfig()).json()).code !== 0) throw 0;
+    } catch {
+        this.checked = !state;
     }
+});
 
-    // 墨翠配色开关
-    checkbox14.addEventListener('change', function() {
-        isChecked14 = this.checked;
-        resetCheckmocui();
-        disableQYLburgundy();
-        disableQYLxuanqing();
-        disableQYLhuimu();
-        if (this.checked) {
-            enableQYLmocui();
-        } else {
-            disableQYLmocui();
-        }
-    });
-
-    //主题互斥-墨翠
-    function resetCheckmocui() {
-        isChecked12 = false;
-        isChecked13 = false;
-        isChecked15 = false;
+// 隐藏顶栏开关
+checkbox3.addEventListener('change', async function() {
+    const state = this.checked;
+    state ? enabletoolbarhidden() : disabletoolbarhidden();
+    state ? isChecked3 = true : isChecked3 = false;
+    try {
+        if ((await (await saveConfig()).json()).code !== 0) throw 0;
+    } catch {
+        this.checked = !state;
     }
+});
 
-    // 灰幕配色开关
-    checkbox15.addEventListener('change', function() {
-        isChecked15 = this.checked;
-        resetCheckhuimu();
-        disableQYLburgundy();
-        disableQYLxuanqing();
-        disableQYLmocui();
-        if (this.checked) {
-            enableQYLhuimu();
-        } else {
-            disableQYLhuimu();
-        }
-    });
-
-    //主题互斥-灰幕
-    function resetCheckhuimu() {
-        isChecked12 = false;
-        isChecked13 = false;
-        isChecked14 = false;
+// 鼠标所在块高亮开关
+checkbox4.addEventListener('change', async function() {
+    const state = this.checked;
+    state ? enablehoverblockremind() : disablehoverblockremind();
+    state ? isChecked4 = true : isChecked4 = false;
+    try {
+        if ((await (await saveConfig()).json()).code !== 0) throw 0;
+    } catch {
+        this.checked = !state;
     }
+});
+
+// 超级块范围提示开关
+checkbox5.addEventListener('change', async function() {
+    const state = this.checked;
+    state ? enablesbremind() : disablesbremind();
+    state ? isChecked5 = true : isChecked5 = false;
+    try {
+        if ((await (await saveConfig()).json()).code !== 0) throw 0;
+    } catch {
+        this.checked = !state;
+    }
+});
+
+// 关闭聚焦块高亮开关
+checkbox8.addEventListener('change', async function() {
+    const state = this.checked;
+    state ? enablecanclefocusblockremind() : disablecanclefocusblockremind();
+    state ? isChecked8 = true : isChecked8 = false;
+    try {
+        if ((await (await saveConfig()).json()).code !== 0) throw 0;
+    } catch {
+        this.checked = !state;
+    }
+});
+
+// 全宽显示开关
+checkbox6.addEventListener('change', async function() {
+    const state = this.checked;
+    state ? enablefullwidth() : disablefullwidth();
+    state ? isChecked6 = true : isChecked6 = false;
+    try {
+        if ((await (await saveConfig()).json()).code !== 0) throw 0;
+    } catch {
+        this.checked = !state;
+    }
+});
+
+// 多彩文档树开关
+checkbox7.addEventListener('change', async function() {
+    const state = this.checked;
+    state ? enablecolorfulfiletree() : disablecolorfulfiletree();
+    state ? isChecked7 = true : isChecked7 = false;
+    try {
+        if ((await (await saveConfig()).json()).code !== 0) throw 0;
+    } catch {
+        this.checked = !state;
+    }
+});
+
+// 关闭主题动画开关
+checkbox9.addEventListener('change', async function() {
+    const state = this.checked;
+    state ? enablecancleQYLanimation() : disablecancleQYLanimation();
+    state ? isChecked9 = true : isChecked9 = false;
+    try {
+        if ((await (await saveConfig()).json()).code !== 0) throw 0;
+    } catch {
+        this.checked = !state;
+    }
+});
+
+// 毛玻璃效果开关
+checkbox10.addEventListener('change', async function() {
+    const state = this.checked;
+    state ? enableQYLAero() : disableQYLAreo();
+    state ? isChecked10 = true : isChecked10 = false;
+    try {
+        if ((await (await saveConfig()).json()).code !== 0) throw 0;
+    } catch {
+        this.checked = !state;
+    }
+});
+
+// 关闭多彩标签和多彩行级代码开关
+checkbox11.addEventListener('change', async function() {
+    const state = this.checked;
+    state ? enablecancleQYLcolorfultag() : disablecancleQYLcolorfultag();
+    state ? isChecked11 = true : isChecked11 = false;
+    try {
+        if ((await (await saveConfig()).json()).code !== 0) throw 0;
+    } catch {
+        this.checked = !state;
+    }
+});
+
+// 勃艮第配色开关
+checkbox12.addEventListener('change', async function() {
+    const state = this.checked;
+    state ? enableQYLburgundy() : disableQYLburgundy();
+    state ? isChecked12 = true : isChecked12 = false;
+    if (isChecked13 === true) { checkbox13.click(); }
+    if (isChecked14 === true) { checkbox14.click(); }
+    if (isChecked15 === true) { checkbox15.click(); }
+    try {
+        if ((await (await saveConfig()).json()).code !== 0) throw 0;
+    } catch {
+        this.checked = !state;
+    }
+});
+
+// 玄青配色开关
+checkbox13.addEventListener('change', async function() {
+    const state = this.checked;
+    state ? enableQYLxuanqing() : disableQYLxuanqing();
+    state ? isChecked13 = true : isChecked13 = false;
+    if (isChecked12 === true) { checkbox12.click(); }
+    if (isChecked14 === true) { checkbox14.click(); }
+    if (isChecked15 === true) { checkbox15.click(); }
+    try {
+        if ((await (await saveConfig()).json()).code !== 0) throw 0;
+    } catch {
+        this.checked = !state;
+    }
+});
+
+// 墨翠配色开关
+checkbox14.addEventListener('change', async function() {
+    const state = this.checked;
+    state ? enableQYLmocui() : disableQYLmocui();
+    state ? isChecked14 = true : isChecked14 = false;
+    if (isChecked12 === true) { checkbox12.click(); }
+    if (isChecked13 === true) { checkbox13.click(); }
+    if (isChecked15 === true) { checkbox15.click(); }
+    try {
+        if ((await (await saveConfig()).json()).code !== 0) throw 0;
+    } catch {
+        this.checked = !state;
+    }
+});
+
+// 灰幕配色开关
+checkbox15.addEventListener('change', async function() {
+    const state = this.checked;
+    state ? enableQYLhuimu() : disableQYLhuimu();
+    state ? isChecked15 = true : isChecked15 = false;
+    if (isChecked12 === true) { checkbox12.click(); }
+    if (isChecked13 === true) { checkbox13.click(); }
+    if (isChecked14 === true) { checkbox14.click(); }
+    try {
+        if ((await (await saveConfig()).json()).code !== 0) throw 0;
+    } catch {
+        this.checked = !state;
+    }
+});
+
 
     // ESC键关闭
     document.addEventListener('keydown', function(event) {
@@ -1904,3 +1967,136 @@ function disableQYLhuimu() {
         styleSheet.innerText = '';
     }
 }
+
+// 读取QYLdarkconfig.json
+async function loadAndCheckConfig() {
+    try {
+        const content = await getFile("/data/snippets/QYLdarkconfig.json");
+        if (!content) return;
+        const config = JSON.parse(content);
+
+        if (config?.isChecked1 === true) {
+            enableMarkStyles();
+            isChecked1 = true;
+        } else if (config?.isChecked1 === false) {
+            disableMarkStyles();
+            isChecked1 = false;
+        }
+
+        if (config?.isChecked2 === true) {
+            enableIndentStyle();
+            isChecked2 = true;
+        } else if (config?.isChecked2 === false) {
+            disableIndentStyle();
+            isChecked2 = false;
+        }
+
+        if (config?.isChecked3 === true) {
+            enabletoolbarhidden();
+            isChecked3 = true;
+        } else if (config?.isChecked3 === false) {
+            disabletoolbarhidden();
+            isChecked3 = false;
+        }
+
+        if (config?.isChecked4 === true) {
+            enablehoverblockremind();
+            isChecked4 = true;
+        } else if (config?.isChecked4 === false) {
+            disablehoverblockremind();
+            isChecked4 = false;
+        }
+
+        if (config?.isChecked5 === true) {
+            enablesbremind();
+            isChecked5 = true;
+        } else if (config?.isChecked5 === false) {
+            disablesbremind();
+            isChecked5 = false;
+        }
+
+        if (config?.isChecked8 === true) {
+            enablecanclefocusblockremind();
+            isChecked8 = true;
+        } else if (config?.isChecked8 === false) {
+            disablecanclefocusblockremind();
+            isChecked8 = false;
+        }
+
+        if (config?.isChecked6 === true) {
+            enablefullwidth();
+            isChecked6 = true;
+        } else if (config?.isChecked6 === false) {
+            disablefullwidth();
+            isChecked6 = false;
+        }
+
+        if (config?.isChecked7 === true) {
+            enablecolorfulfiletree();
+            isChecked7 = true;
+        } else if (config?.isChecked7 === false) {
+            disablecolorfulfiletree();
+            isChecked7 = false;
+        }
+
+        if (config?.isChecked9 === true) {
+            setTimeout(enablecancleQYLanimation, 3000);
+            isChecked9 = true;
+        } else if (config?.isChecked9 === false) {
+            disablecancleQYLanimation();
+            isChecked9 = false;
+        }
+
+        if (config?.isChecked10 === true) {
+            enableQYLAero();
+            isChecked10 = true;
+        } else if (config?.isChecked10 === false) {
+            disableQYLAreo();
+            isChecked10 = false;
+        }
+
+        if (config?.isChecked11 === true) {
+            enablecancleQYLcolorfultag();
+            isChecked11 = true;
+        } else if (config?.isChecked11 === false) {
+            disablecancleQYLcolorfultag();
+            isChecked11 = false;
+        }
+
+        if (config?.isChecked12 === true) {
+            enableQYLburgundy();
+            isChecked12 = true;
+        } else if (config?.isChecked12 === false) {
+            disableQYLburgundy();
+            isChecked12 = false;
+        }
+
+        if (config?.isChecked13 === true) {
+            enableQYLxuanqing();
+            isChecked13 = true;
+        } else if (config?.isChecked13 === false) {
+            disableQYLxuanqing();
+            isChecked13 = false;
+        }
+
+        if (config?.isChecked14 === true) {
+            enableQYLmocui();
+            isChecked14 = true;
+        } else if (config?.isChecked14 === false) {
+            disableQYLmocui();
+            isChecked14 = false;
+        }
+
+        if (config?.isChecked15 === true) {
+            enableQYLhuimu();
+            isChecked15 = true;
+        } else if (config?.isChecked15 === false) {
+            disableQYLhuimu();
+            isChecked15 = false;
+        }
+
+    } catch (e) {
+        console.error("加载配置失败:", e);
+    }
+}
+loadAndCheckConfig();
