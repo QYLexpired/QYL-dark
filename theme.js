@@ -206,21 +206,23 @@ function addThemeToolBar() {
 
 // 设置窗口
 
-let isChecked1 = false;
-let isChecked2 = false;
-let isChecked3 = false;
-let isChecked4 = false;
-let isChecked5 = false;
-let isChecked6 = false;
-let isChecked7 = false;
-let isChecked8 = false;
-let isChecked9 = false;
-let isChecked10 = false;
-let isChecked11 = false;
-let isChecked12 = false;
-let isChecked13 = false;
-let isChecked14 = false;
-let isChecked15 = false;
+let isChecked1;
+let isChecked2;
+let isChecked3;
+let isChecked4;
+let isChecked5;
+let isChecked6;
+let isChecked7;
+let isChecked8;
+let isChecked9;
+let isChecked10;
+let isChecked11;
+let isChecked12;
+let isChecked13;
+let isChecked14;
+let isChecked15;
+let isChecked16;
+let isChecked17;
 
 function createSettingsWindow() {
     // 检查是否已经存在设置窗口
@@ -335,7 +337,7 @@ function createSettingsWindow() {
 
     const label9 = document.createElement('label');
     label9.htmlFor = 'QYLanimation-checkbox';
-    label9.textContent = ' 关闭主题动画';
+    label9.textContent = ' 开启主题动画';
     label9.style.fontSize = '14px';
     label9.style.userSelect= 'none';
 
@@ -404,6 +406,28 @@ function createSettingsWindow() {
     label15.textContent = ' 配色：灰幕';
     label15.style.fontSize = '14px';
     label15.style.userSelect= 'none';
+
+    const checkbox16 = document.createElement('input');
+    checkbox16.type = 'checkbox';
+    checkbox16.id = 'QYLinkmode-checkbox';
+    checkbox16.checked = isChecked16;
+
+    const label16 = document.createElement('label');
+    label16.htmlFor = 'QYLinkmode-checkbox';
+    label16.textContent = ' 墨水屏模式';
+    label16.style.fontSize = '14px';
+    label16.style.userSelect= 'none';
+
+    const checkbox17 = document.createElement('input');
+    checkbox17.type = 'checkbox';
+    checkbox17.id = 'QYLlchixia-checkbox';
+    checkbox17.checked = isChecked17;
+
+    const label17 = document.createElement('label');
+    label17.htmlFor = 'QYLlchixia-checkbox';
+    label17.textContent = ' 配色：赤霞';
+    label17.style.fontSize = '14px';
+    label17.style.userSelect= 'none';
 
     // 将复选框和标签组合
     const QYLfunctionpair1 = document.createElement('div');
@@ -496,6 +520,18 @@ function createSettingsWindow() {
     QYLfunctionpair15.appendChild(label15);
     QYLfunctionpair15.style.animation = 'QYLbounceRight2 0.1s';
 
+    const QYLfunctionpair16 = document.createElement('div');
+    QYLfunctionpair16.className = 'checkbox-label-pair';
+    QYLfunctionpair16.appendChild(checkbox16);
+    QYLfunctionpair16.appendChild(label16);
+    QYLfunctionpair16.style.animation = 'QYLbounceRight2 0.1s';
+
+    const QYLfunctionpair17 = document.createElement('div');
+    QYLfunctionpair17.className = 'checkbox-label-pair';
+    QYLfunctionpair17.appendChild(checkbox17);
+    QYLfunctionpair17.appendChild(label17);
+    QYLfunctionpair17.style.animation = 'QYLbounceRight2 0.1s';
+
     // 将复选框和标签添加到设置窗口
     settingsWindow.appendChild(QYLfunctionpair1);
     settingsWindow.appendChild(QYLfunctionpair2);
@@ -508,10 +544,12 @@ function createSettingsWindow() {
     settingsWindow.appendChild(QYLfunctionpair9);
     settingsWindow.appendChild(QYLfunctionpair10);
     settingsWindow.appendChild(QYLfunctionpair11);
+    settingsWindow.appendChild(QYLfunctionpair16);
     settingsWindow.appendChild(QYLfunctionpair12);
     settingsWindow.appendChild(QYLfunctionpair13);
     settingsWindow.appendChild(QYLfunctionpair14);
     settingsWindow.appendChild(QYLfunctionpair15);
+    settingsWindow.appendChild(QYLfunctionpair17);
 
     // 将设置窗口添加到body
     document.body.appendChild(settingsWindow);
@@ -538,7 +576,9 @@ async function saveConfig() {
         isChecked12: checkbox12.checked,
         isChecked13: checkbox13.checked,
         isChecked14: checkbox14.checked,
-        isChecked15: checkbox15.checked
+        isChecked15: checkbox15.checked,
+        isChecked16: checkbox16.checked,
+        isChecked17: checkbox17.checked
     })], { type: 'application/json' }), 'QYLdarkconfig.json');
 
     return fetch('/api/file/putFile', { method: 'POST', body: formData });
@@ -640,10 +680,10 @@ checkbox7.addEventListener('change', async function() {
     }
 });
 
-// 关闭主题动画开关
+// 开启主题动画开关
 checkbox9.addEventListener('change', async function() {
     const state = this.checked;
-    state ? enablecancleQYLanimation() : disablecancleQYLanimation();
+    state ? enableQYLanimation() : disableQYLanimation();
     state ? isChecked9 = true : isChecked9 = false;
     try {
         if ((await (await saveConfig()).json()).code !== 0) throw 0;
@@ -657,6 +697,7 @@ checkbox10.addEventListener('change', async function() {
     const state = this.checked;
     state ? enableQYLAero() : disableQYLAreo();
     state ? isChecked10 = true : isChecked10 = false;
+    if (isChecked16 === true) { checkbox16.click(); }
     try {
         if ((await (await saveConfig()).json()).code !== 0) throw 0;
     } catch {
@@ -684,6 +725,7 @@ checkbox12.addEventListener('change', async function() {
     if (isChecked13 === true) { checkbox13.click(); }
     if (isChecked14 === true) { checkbox14.click(); }
     if (isChecked15 === true) { checkbox15.click(); }
+    if (isChecked17 === true) { checkbox17.click(); }
     try {
         if ((await (await saveConfig()).json()).code !== 0) throw 0;
     } catch {
@@ -699,6 +741,7 @@ checkbox13.addEventListener('change', async function() {
     if (isChecked12 === true) { checkbox12.click(); }
     if (isChecked14 === true) { checkbox14.click(); }
     if (isChecked15 === true) { checkbox15.click(); }
+    if (isChecked17 === true) { checkbox17.click(); }
     try {
         if ((await (await saveConfig()).json()).code !== 0) throw 0;
     } catch {
@@ -714,6 +757,7 @@ checkbox14.addEventListener('change', async function() {
     if (isChecked12 === true) { checkbox12.click(); }
     if (isChecked13 === true) { checkbox13.click(); }
     if (isChecked15 === true) { checkbox15.click(); }
+    if (isChecked17 === true) { checkbox17.click(); }
     try {
         if ((await (await saveConfig()).json()).code !== 0) throw 0;
     } catch {
@@ -729,6 +773,7 @@ checkbox15.addEventListener('change', async function() {
     if (isChecked12 === true) { checkbox12.click(); }
     if (isChecked13 === true) { checkbox13.click(); }
     if (isChecked14 === true) { checkbox14.click(); }
+    if (isChecked17 === true) { checkbox17.click(); }
     try {
         if ((await (await saveConfig()).json()).code !== 0) throw 0;
     } catch {
@@ -736,6 +781,34 @@ checkbox15.addEventListener('change', async function() {
     }
 });
 
+// 赤霞配色开关
+checkbox17.addEventListener('change', async function() {
+    const state = this.checked;
+    state ? enableQYLchixia() : disableQYLchixia();
+    state ? isChecked17 = true : isChecked17 = false;
+    if (isChecked12 === true) { checkbox12.click(); }
+    if (isChecked13 === true) { checkbox13.click(); }
+    if (isChecked14 === true) { checkbox14.click(); }
+    if (isChecked15 === true) { checkbox15.click(); }
+    try {
+        if ((await (await saveConfig()).json()).code !== 0) throw 0;
+    } catch {
+        this.checked = !state;
+    }
+});
+
+// 墨水屏模式开关
+checkbox16.addEventListener('change', async function() {
+    const state = this.checked;
+    state ? enableQYLinkmode() : disableQYLinkmode();
+    state ? isChecked16 = true : isChecked16 = false;
+    if (isChecked10 === true) { checkbox10.click(); }
+    try {
+        if ((await (await saveConfig()).json()).code !== 0) throw 0;
+    } catch {
+        this.checked = !state;
+    }
+});
 
     // ESC键关闭
     document.addEventListener('keydown', function(event) {
@@ -1211,8 +1284,8 @@ function disablecolorfulfiletree() {
     }
 }
 
-// 关闭主题动画
-function enablecancleQYLanimation() {
+// 开启主题动画
+function enableQYLanimation() {
     let styleSheet = document.getElementById("QYLanimation-style");
     if (!styleSheet) {
         styleSheet = document.createElement("style");
@@ -1220,22 +1293,170 @@ function enablecancleQYLanimation() {
         document.head.appendChild(styleSheet);
     }
     styleSheet.innerText = `
-        :root {
-            --b3-transition: all .2s cubic-bezier(0, 0, .2, 1) 0ms;
-            --b3-width-transition: width .2s cubic-bezier(0, 0, .2, 1) 0ms;
-            --b3-color-transition: color .2s cubic-bezier(0, 0, .2, 1) 0ms;
-            --b3-background-transition: background 20ms ease-in 0s;
+        /* 弹出动画 */
+        @keyframes QYLpopout {
+            0%,10% {
+                opacity: 0;
+                transform: none
+            }
+
+            10% {
+                transform: scale(0.9)
+            }
+
+            90%,100% {
+                opacity: 1
+            }
+
+            100% {
+                transform: none
+            }
         }
-        @keyframes QYLpopout {}
-        @keyframes QYLpopout2 {}
-        @keyframes QYLpopout3 {}
-        @keyframes QYLbounceRight {}
-        @keyframes QYLbounceRight2 {}
+        @keyframes QYLpopout2 {
+            0%,10% {
+                opacity: 1;
+                transform: none
+            }
+
+            10% {
+                transform: scale(0.9)
+            }
+
+            90%,100% {
+                opacity: 1
+            }
+
+            100% {
+                transform: none
+            }
+        }
+        @keyframes QYLpopout3 {
+            0%,10% {
+                opacity: 1;
+                transform: none
+            }
+
+            10% {
+                transform: scale(0.85)
+            }
+
+            90%,100% {
+                opacity: 1
+            }
+
+            100% {
+                transform: none
+            }
+        }
+        /* 右弹动画 */
+        @keyframes QYLbounceRight {
+            00% {
+                transform: translateX(-100%);
+            }
+            30% {
+                transform: translateX(10%);
+            }
+            70% {
+                transform: translateX(-5%);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+        @keyframes QYLbounceRight2 {
+            0% {
+                transform: translateX(-50%);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+        /* 斜杠菜单动画 */
+        .protyle-hint.hint--menu .b3-list-item {
+            animation: QYLbounceRight2 0.15s;
+        }
+        /* 编辑器工具栏动画 */
+        .protyle-toolbar button, .protyle-hint .b3-list-item{
+            animation: QYLbounceRight2 0.15s;
+        }
+        /* 任务列表动画 */
+        .protyle-wysiwyg .li.protyle-task--done > .protyle-action--task::before, .av__cell-check::before {
+            animation: QYLpopout 0.2s forwards;
+        }
+        /* 侧栏图标动画 */
+        .block__logo {
+            animation: QYLbounceRight 0.5s;
+        }
+        /* 集市卡片动画 */
+        .config-bazaar__panel .b3-card {
+            animation: QYLbounceRight2 0.2s;
+        }
+        .config-bazaar__panel .b3-card:hover {
+            transform: scale(1.02);
+        }
+        .config__tab-wrap > div {
+            animation: QYLbounceRight2 0.2s;
+        }
+        /* 自定义属性面板动画 */
+        .b3-dialog__body .custom-attr {
+            animation: QYLbounceRight2 0.2s;
+        }
+        /* 搜索面板动画 */
+        :is(#searchList, #searchAssetList, #searchUnRefList) .b3-list-item {
+            animation: QYLbounceRight2 0.2s;
+        }
+        /* 弹出文档动画 */
+        body > div.block__popover.block__popover--open {
+            animation: QYLpopout 0.2s;
+        }
+        /* 退出聚焦按钮动画 */
+        .protyle-breadcrumb button[data-type="exit-focus"] {
+            animation: QYLbounceRight 0.5s;
+        }
+        /* 文档标题动画 */
+        .protyle-title__input {
+            animation: QYLbounceRight2 0.2s;
+            color: var(--b3-theme-primary);
+        }
+        /* 资源图片预览动画 */
+        #preview > * {
+            animation: QYLpopout2 0.2s;
+        }
+        #preview > * {
+            border-radius: var(--b3-border-radius);
+        }
+        /* 菜单内动画 */
+        .b3-menu .b3-menu__item {
+            animation: QYLbounceRight2 0.1s;
+        }
+        #commonMenu .b3-list-item {
+            animation: QYLbounceRight2 0.1s;
+        }
+        /* 闪卡动画 */
+        [data-key="dialog-viewcards"] .fn__flex-1.b3-list div[data-type="card-item"] {
+            animation: QYLbounceRight2 0.15s;
+        }
+        /* 同步面板动画 */
+        [data-key="dialog-syncchoosedirection"] .b3-dialog__content .fn__flex.b3-label {
+            animation: QYLbounceRight2 0.15s;
+        }
+        /* 命令面板动画 */
+        [data-key="dialog-commandpanel"] .search__list .b3-list-item {
+            animation: QYLbounceRight2 0.15s;
+        }
+        /* 数据历史动画 */
+        [data-key="dialog-history"] :is(.history__side, [data-type="notebook"], [data-type="repo"] ) .b3-list-item {
+            animation: QYLbounceRight2 0.15s;
+        }
+        /* 最近的文档动画 */
+        [data-key="dialog-recentdocs"] .b3-list.b3-list--background .b3-list-item {
+            animation: QYLbounceRight2 0.15s;
+        }
     `;
 }
 
-// 取消关闭主题动画
-function disablecancleQYLanimation() {
+// 关闭主题动画
+function disableQYLanimation() {
     const styleSheet = document.getElementById("QYLanimation-style");
     if (styleSheet) {
         styleSheet.innerText = '';
@@ -1606,7 +1827,7 @@ function enableQYLburgundy() {
         }
         :root {
             --QYL-switch-close: var(--QYL-gray);
-            --QYL-switch-close-background: rgb(48, 41, 41);
+            --QYL-switch-close-background: rgb(93, 82, 82);
             --QYL-input-border: rgb(108, 79, 79);
             --QYL-input-border-hover: var(--b3-theme-primary);
             --b3-switch-checked-background: var(--b3-theme-primary);
@@ -1614,7 +1835,7 @@ function enableQYLburgundy() {
         }
         :root {
             --QYL-filter-background-theme: rgba(22, 15, 15, 0.5);
-            --QYL-filter-wrap-background-theme: rgba(22, 15, 15, 0.6);
+            --QYL-filter-wrap-background-theme: rgba(43, 36, 36, 0.6);
             --QYL-filter-fix-background-theme: rgba(22, 15, 15, 0.8);
         }
         :root {
@@ -1726,7 +1947,7 @@ function enableQYLxuanqing() {
         }
         :root {
             --QYL-filter-background-theme: rgba(34, 35, 44, 0.5);
-            --QYL-filter-wrap-background-theme: rgba(34, 35, 44, 0.6);
+            --QYL-filter-wrap-background-theme: rgba(45, 47, 53, 0.6);
             --QYL-filter-fix-background-theme: rgba(34, 35, 44, 0.8);
         }
         :root {
@@ -1838,7 +2059,7 @@ function enableQYLmocui() {
         }
         :root {
             --QYL-filter-background-theme: rgba(31, 38, 31, 0.5);
-            --QYL-filter-wrap-background-theme: rgba(31, 38, 31, 0.6);
+            --QYL-filter-wrap-background-theme: rgba(43, 49, 43, 0.6);
             --QYL-filter-fix-background-theme: rgba(31, 38, 31, 0.8);
         }
         :root {
@@ -1950,7 +2171,7 @@ function enableQYLhuimu() {
         }
         :root {
             --QYL-filter-background-theme: rgba(59, 59, 59, 0.5);
-            --QYL-filter-wrap-background-theme: rgba(59, 59, 59, 0.6);
+            --QYL-filter-wrap-background-theme: rgba(60, 60, 60, 0.6);
             --QYL-filter-fix-background-theme: rgba(59, 59, 59, 0.8);
         }
         :root {
@@ -1967,6 +2188,407 @@ function disableQYLhuimu() {
         styleSheet.innerText = '';
     }
 }
+
+//开启墨水屏模式
+function enableQYLinkmode() {
+    let styleSheet = document.getElementById("QYLinkmode-style");
+    if (!styleSheet) {
+        styleSheet = document.createElement("style");
+        styleSheet.id = "QYLinkmode-style";
+        document.head.appendChild(styleSheet);
+    }
+    styleSheet.innerText = `
+        :root {
+        --QYL-filetree: var(--b3-theme-background); /* 文档树、反链等背景色 */
+        --b3-list-hover: var(--QYL-hover); /* 大部分悬停背景色 */
+        --b3-toolbar-hover: var(--QYL-hover); /*顶部工具栏悬停背景色 */
+        --b3-list-icon-hover: var(--QYL-hover-hover); /* 文档树按钮悬停色、面包屑栏按钮悬停色 */
+        --b3-scroll-color: var(--b3-theme-primary); /* 滚动条颜色 */
+        --QYL-filter-background-forQsettings: var(--b3-theme-background);
+
+        /* 圆角矩形 */
+        --b3-border-radius: 8px;
+        --b3-border-radius-b: 8px;
+        --b3-border-radius-q: 8px;
+        }
+        /* 主界面 */
+        [data-type="wnd"] .layout-tab-container.fn__flex-1 {
+        border: 1.5px solid var(--b3-theme-primary);
+        }
+        /* 页签 */
+        [data-type="wnd"] .fn__flex:not(.av__views) .fn__flex.layout-tab-bar {
+        border: 1.5px solid var(--b3-theme-primary);
+        border-right: none;
+        }
+        [data-type="wnd"] .fn__flex:not(.av__views) .layout-tab-bar--readonly {
+        border: 1.5px solid var(--b3-theme-primary);
+        border-left: none;
+        }
+        .layout-tab-bar .item--focus:not(.item--readonly) {
+        height: 25px;
+        background-color: var(--b3-theme-background) !important;
+        border: 2px solid var(--b3-theme-primary);
+        }
+        .layout-tab-bar .item:not(.item--readonly, .item--focus) {
+        height: 25px;
+        background-color: var(--b3-theme-background) !important;
+        border: 1.5px solid var(--b3-theme-primary-lighter);
+        }
+        /* 菜单 */
+        .b3-menu, .b3-menu__submenu {
+        border: 1.5px solid var(--b3-theme-primary);
+        }
+        /* 设置页 */
+        div[data-key="dialog-setting"] .b3-dialog__container {
+        border: 1.5px solid var(--b3-theme-primary);
+        }
+        div[data-key="dialog-setting"] .config__tab-wrap {
+        border: 1.5px solid var(--b3-theme-primary);
+        }
+        .config__panel>.b3-tab-bar .config__tab-hr {
+        background: var(--b3-theme-background);
+        }
+        .b3-text-field, .pcr-app .pcr-interaction .pcr-result, .b3-select {
+        box-shadow:  none !important;
+        border: 1.5px solid var(--b3-theme-primary);
+        }
+        [data-key="dialog-setting"] .b3-tab-bar li[data-name] {
+        height: 30px;
+        margin-bottom: 10px;
+        }
+        .config-bazaar__panel .b3-card {
+        margin-top: 20px;
+        background-color: var(--b3-theme-background);
+        border: 1.5px solid var(--b3-theme-primary);
+        }
+        .config-bazaar__panel .b3-card:hover {
+        background-color: rgba(255, 0, 0, 0);
+        }
+        .config-bazaar__readme .item__side {
+        padding-top: 2px;
+        }
+        .b3-switch {
+        border: 1.5px solid var(--b3-theme-primary);
+        background-color: rgba(255, 0, 0, 0);
+        }
+        .b3-switch::after {
+        background-color: var(--b3-theme-primary);
+        }
+        /* 按钮 */
+        .b3-button--outline {
+        border: 1.5px solid var(--b3-theme-primary) !important;
+        }
+        /* 提示气泡 */
+        #tooltip {
+        background-color: var(--b3-theme-background);
+        border: 1.5px solid var(--b3-theme-primary);
+        color: var(--b3-theme-primary);
+        padding: 2px 3px;
+        }
+        .b3-tooltips::before {
+        display: none !important;
+        }
+        .b3-tooltips::after {
+        background-color: var(--b3-theme-background);
+        border: 1.5px solid var(--b3-theme-primary);
+        color: var(--b3-theme-primary);
+        padding: 2px 3px;
+        }
+        .protyle-toolbar .b3-tooltips::after {
+        background-color: var(--b3-theme-background);
+        padding: 2px 3px;
+        }
+        /* 右上角消息框 */
+        .b3-snackbar__content {
+        margin-top: 10px;
+        background-color: var(--b3-theme-background);
+        border: 1.5px solid var(--b3-theme-primary);
+        color: var(--b3-theme-primary)
+        }
+        .b3-snackbar--error .b3-snackbar__content::after {
+        margin-top: 10px;
+        }
+        /* 命令面板 */
+        [data-key="dialog-commandpanel"] .b3-dialog__container {
+        border: 1.5px solid var(--b3-theme-primary);
+        }
+        div[data-key="dialog-commandpanel"] .b3-dialog__body .fn__flex-column .b3-form__icon.search__header {
+        border: 1.5px solid var(--b3-theme-primary) !important;
+        }
+        /* 搜索面板 */
+        [data-key="dialog-globalsearch"] .b3-dialog__container {
+        border: 1.5px solid var(--b3-theme-primary);
+        }
+        div[data-key="dialog-globalsearch"] .b3-form__icon.search__header .b3-text-field.b3-text-field--text {
+        border: 1.5px solid var(--b3-theme-primary);
+        }
+        /* 闪卡 */
+        [data-key="dialog-opencard"] .b3-dialog__container {
+        border: 1.5px solid var(--b3-theme-primary);
+        }
+        [data-key="dialog-viewcards"] .b3-dialog__container {
+        border: 1.5px solid var(--b3-theme-primary);
+        }
+        /* 数据历史 */
+        [data-key="dialog-history"] .b3-dialog__container {
+        border: 1.5px solid var(--b3-theme-primary);
+        }
+        /* 斜杠菜单 */
+        .protyle-hint.hint--menu {
+        border: 1.5px solid var(--b3-theme-primary);
+        }
+        /* 编辑器工具栏 */
+        .protyle-toolbar {
+        border: 1.5px solid var(--b3-theme-primary);
+        }
+        .protyle-toolbar__item:hover {
+        outline: 1.5px solid var(--b3-theme-primary);
+        background-color: rgba(255, 0, 0, 0);
+        }
+        /* 悬停 */
+        .b3-list--background .b3-list-item:not(.b3-list-item--focus):not(.dragover):not(.dragover__current):not(.dragover__top):not(.dragover__bottom), .b3-list--background .b3-list-item--focus {
+        border: 1.5px solid rgba(255, 0, 0, 0);
+        }
+        .b3-list--background .b3-list-item:hover:not(.b3-list-item--focus):not(.dragover):not(.dragover__current):not(.dragover__top):not(.dragover__bottom), .b3-list--background .b3-list-item--focus {
+        border: 1.5px solid var(--b3-theme-primary);
+        background-color: rgba(255, 0, 0, 0);
+        }
+        .b3-menu__item {
+        border: 1.5px solid rgba(255, 0, 0, 0);
+        }
+        .b3-menu__item--current:not(.b3-menu__item--readonly) {
+        border: 1.5px solid var(--b3-theme-primary);
+        }
+        .toolbar__item:not(.toolbar__item--win, .toolbar__item--close):hover {
+        outline: 1.5px solid var(--b3-theme-primary);
+        background-color: rgba(255, 0, 0, 0) !important;
+        }
+        .block__icon:hover:not([disabled]):not(.ft__primary):not(.block__icon--warning), .block__icon--active {
+        background-color: rgba(255, 0, 0, 0);
+        outline: 1.5px solid var(--b3-theme-primary);
+        }
+        .b3-list-item__toggle--hl:hover, .b3-list-item__action:hover, .b3-list-item__icon:hover, .b3-menu__avemoji:hover {
+        background-color: rgba(255, 0, 0, 0);
+        outline: 1.5px solid var(--b3-theme-primary);
+        }
+        .protyle-breadcrumb__item {
+        margin-left: 3px;
+        margin-right: 3px;
+        }
+        .protyle-breadcrumb__item:hover, .protyle-breadcrumb__item--active {
+        background-color: var(--b3-theme-background);
+        outline: 1.5px solid var(--b3-theme-primary);
+        }
+        .b3-menu__item--selected {
+        border: 1.5px solid var(--b3-theme-primary);
+        }
+        .secondaryToolbarButton {
+        border: 1.5px solid rgba(255, 0, 0, 0);
+        }
+        .secondaryToolbarButton:hover {
+        border: 1.5px solid var(--b3-theme-primary);
+        background-color: rgba(255, 0, 0, 0) !important;
+        }
+        .pdf__util .b3-menu__item {
+        border: 1.5px solid rgba(255, 0, 0, 0);
+        }
+        .pdf__util .b3-menu__item:hover {
+        border: 1.5px solid var(--b3-theme-primary);
+        background-color: rgba(255, 0, 0, 0) !important;
+        }
+        .b3-menu__item--current:not(.b3-menu__item--readonly) {
+        border: 1.5px solid var(--b3-theme-primary);
+        background-color: rgba(255, 0, 0, 0) !important;
+        }
+        .layout--float .sy__backlink .block__icons+.fn__flex-1 li:not(.b3-list--empty), .layout__center .sy__backlink .block__icons+.fn__flex-1 li:not(.b3-list--empty), .layout__dockr .sy__backlink .block__icons+.fn__flex-1 li:not(.b3-list--empty) {
+        border: 1.5px solid var(--b3-theme-primary) !important;
+        background-color: rgba(255, 0, 0, 0) !important;
+        }
+        .counter:hover {
+        background-color: rgba(255, 0, 0, 0) !important;
+        outline: 1.5px solid var(--b3-theme-primary);
+        }
+        .b3-list-item__toggle:hover {
+        color: var(--b3-theme-primary);
+        background-color: rgba(255, 0, 0, 0) !important;
+        outline: none !important;
+        }
+        /* 底部状态栏 */
+        #status {
+        background-color: var(--b3-theme-background);
+        border: 1.5px solid var(--b3-theme-primary);
+        }
+        /* QYL设置框 */
+        #settings-window {
+        border: 1.5px solid var(--b3-theme-primary) !important;
+        }
+        /* 杂项 */
+        .protyle-attr--refcount:hover {
+        color: var(--b3-theme-background);
+        }
+        /* 多彩文档树修复 */
+        [data-type="navigation-root"]::before {
+        height: 32px !important;
+        left: -22px !important;
+        }
+        /* 排版元素 */
+        .b3-typography kbd, .b3-typography span[data-type~=kbd], .protyle-wysiwyg kbd, .protyle-wysiwyg span[data-type~=kbd] {
+        border: 1.5px solid var(--b3-theme-surface-lighter);
+        box-shadow: inset 0 -2px 0 var(--b3-theme-surface-lighter);
+        }
+        .protyle-wysiwyg [data-node-id] span[data-type~=tag] {
+        border: 1.5px solid  !important;
+        background-color: rgba(255, 0, 0, 0) !important;
+        padding: 1px 3px !important;
+        }
+        :is(.fn__code, .b3-typography code, .b3-typography span[data-type~=code], .protyle-wysiwyg code, .protyle-wysiwyg span[data-type~=code]):is(:nth-of-type(8n+1), :nth-of-type(8n+2), :nth-of-type(8n+3), :nth-of-type(8n+4), :nth-of-type(8n+5), :nth-of-type(8n+6), :nth-of-type(8n+7), :nth-of-type(8n)) {
+        background-color: rgba(255, 0, 0, 0);
+        border: 1.5px solid  !important;
+        padding: 1px 3px !important;
+        white-space: nowrap;
+        }
+        .protyle-wysiwyg blockquote::before, .protyle-wysiwyg .bq::before {
+        background-color: var(--b3-theme-primary);
+        }
+        .protyle-wysiwyg blockquote, .protyle-wysiwyg .bq {
+        background-color: rgba(255, 0, 0, 0);
+        border: 1.5px solid;
+        color: var(--b3-theme-primary);
+        }
+        .b3-typography .code-block, .protyle-wysiwyg .code-block {
+        background-color: rgba(255, 0, 0, 0);
+        border: 1.5px solid var(--b3-theme-primary);
+        }
+        .protyle-linenumber__rows>span::before {
+        font-style: italic;
+        color: var(--b3-theme-primary);
+        padding-right: 2px;
+        }
+    `;
+}
+
+// 关闭墨水屏模式
+function disableQYLinkmode() {
+    const styleSheet = document.getElementById("QYLinkmode-style");
+    if (styleSheet) {
+        styleSheet.innerText = '';
+    }
+}
+
+// 开启灰幕配色
+function enableQYLchixia() {
+    let styleSheet = document.getElementById("QYLchixia-style");
+    if (!styleSheet) {
+        styleSheet = document.createElement("style");
+        styleSheet.id = "QYLchixia-style";
+        document.head.appendChild(styleSheet);
+    }
+    styleSheet.innerText = `
+        :root {
+            /* 主色 */
+            --b3-theme-background: #41344f;
+            --b3-theme-background-light:#675679; /* 编辑器较多变浅（不透明） */
+            --b3-theme-surface: #534362;
+            --b3-theme-surface-light: rgba(83, 67, 98, 0.86);
+            --b3-theme-surface-lighter: rgba(91, 82, 100, 0.6); /* 线条色 */
+
+            /* 文字颜色 */
+            --b3-theme-on-primary: #fff;
+            --b3-theme-on-secondary: #fff;
+            --b3-theme-on-background: #d1d1d1;
+            --b3-theme-on-surface: #d1d1d1;
+            --b3-theme-on-surface-light: #d1d1d1;
+            --b3-theme-on-error: #fff;
+
+            /* 容器阴影 */
+            --b3-point-shadow: var(--b3-theme-primary-lightest) 0px 3px 6px, var(--b3-theme-primary-lightest) 0px 3px 6px;
+            --b3-dialog-shadow: var(--b3-theme-primary-lightest) 0px 3px 6px, var(--b3-theme-primary-lightest) 0px 3px 6px;
+            --b3-button-shadow: var(--b3-theme-primary-lightest) 0px 3px 6px, var(--b3-theme-primary-lightest) 0px 3px 6px;
+            --b3-light-shadow: var(--b3-theme-primary-lightest) 0px 1px 2px 0px, var(--b3-theme-primary-lightest) 0px 1px 3px 1px;
+            --QYL-shadow-highlight: var(--b3-theme-primary-lighter) 0px 0px 8px;
+        }
+        :root {
+            --QYL-hover: rgba(119, 100, 132, 0.7); /* 主要悬停色 */
+            --QYL-hover-hover: rgba(119, 100, 132, 0.8);/* 主要悬停色加深 */
+            --QYL-hover-light: rgba(119, 100, 132, 0.2);/* 主要悬停色变浅 */
+            --QYL-filetree: var(--b3-theme-background); /* 文档树、反链等背景色 */
+            --b3-list-hover: var(--QYL-hover); /* 大部分悬停背景色 */
+            --b3-toolbar-hover: var(--QYL-hover); /*顶部工具栏悬停背景色 */
+            --b3-list-icon-hover: var(--QYL-hover-hover); /* 文档树按钮悬停色、面包屑栏按钮悬停色 */
+            --b3-theme-primary: #7c6c92; 
+            --b3-theme-primary-light: rgba(128, 99, 168, 0.56); /* 主色0.5透明度 */
+            --b3-theme-primary-lighter: rgba(128, 99, 168, 0.35); /* 主色0.3透明度 */
+            --b3-theme-primary-lightest: rgba(128, 99, 168, 0.1); /* 主色0.1透明度 */
+            --b3-protyle-inline-mark-background: rgba(81, 150, 92, 0.8);/* 标记色 */
+            --b3-protyle-inline-mark-color: #dadada; /* 标记文字色 */
+            --b3-border-color: var(--b3-theme-surface-lighter); /* 线条色 */
+            --b3-scroll-color: rgb(100, 80, 106); /* 滚动条颜色 */
+            --QYL-white: #fff; /* 通用白 */
+            --QYL-black: #171717; /* 通用黑 */
+            --QYL-gray: #bfbfbf; /* 通用灰 */
+            --b3-toolbar-blur-background: #5f536b; /* 失焦颜色 */
+            --QYL-filter-background-forQsettings: var(--b3-theme-background);
+
+            /* 圆角矩形 */
+            --b3-border-radius: 10px;
+            --b3-border-radius-b: 10px;
+            --b3-border-radius-q: 16px;
+            
+            /* 动画效果 */
+            --b3-transition: 0.2s ease-in-out;
+            --b3-transition-slow: 0.4s ease-in-out;
+            --b3-width-transition: width 0.2s ease-in-out;
+            --b3-color-transition: color 0.2s ease-in-out;
+            --b3-background-transition: background 0.2s ease-in-out;
+
+            /* PDF */
+            --b3-pdf-selection: #94ff71;
+            --sidebar-width: 200px;
+            --b3-pdf-offset: 0;
+            --b3-pdf-background1: #ffc3c3;
+            --b3-pdf-background2: #ffcba5;
+            --b3-pdf-background3: #ffda83;
+            --b3-pdf-background4: #b1eda2;
+            --b3-pdf-background5: #85efe6;
+            --b3-pdf-background6: #a3d3ff;
+            --b3-pdf-background7: #f3c5ff;
+            --b3-pdf-dark: #292a2b;
+        }
+        :root {
+            --QYL-blockquote: #8e8994;
+            --QYL-blockquote-background: #50475a;
+            --QYL-blockquote-svg: #72697d;
+        }
+        :root {
+            --QYL-switch-close: var(--QYL-gray);
+            --QYL-switch-close-background: rgb(106, 97, 114);
+            --QYL-input-border: rgb(106, 97, 114);
+            --QYL-input-border-hover: var(--b3-theme-primary);
+            --b3-switch-checked-background: var(--b3-theme-primary);
+            --b3-switch-checked: var(--QYL-gray);
+        }
+        :root {
+            --QYL-filter-background-theme: rgba(69, 54, 83, 0.5);
+            --QYL-filter-wrap-background-theme: rgba(68, 58, 77, 0.6);
+            --QYL-filter-fix-background-theme: rgba(69, 54, 83, 0.8);
+        }
+        :root {
+            --QYL-account-background1: linear-gradient(to right top, #4c3a5a, #4f3e5d, #534260, #564664, #5a4a67, #5d4e6a, #61526c, #64566f, #675a72, #6b5e74, #6e6377, #72677a);
+            --QYL-account-background2: linear-gradient(to right top, #4c3a5a, #4f3e5d, #534260, #564664, #5a4a67, #5d4e6a, #61526c, #64566f, #675a72, #6b5e74, #6e6377, #72677a);
+        }
+    `;
+}
+
+// 关闭赤霞配色
+function disableQYLchixia() {
+    const styleSheet = document.getElementById("QYLchixia-style");
+    if (styleSheet) {
+        styleSheet.innerText = '';
+    }
+}
+
+
+
 
 // 读取QYLdarkconfig.json
 async function loadAndCheckConfig() {
@@ -2040,10 +2662,10 @@ async function loadAndCheckConfig() {
         }
 
         if (config?.isChecked9 === true) {
-            setTimeout(enablecancleQYLanimation, 3000);
+            enableQYLanimation();
             isChecked9 = true;
         } else if (config?.isChecked9 === false) {
-            disablecancleQYLanimation();
+            disableQYLanimation();
             isChecked9 = false;
         }
 
@@ -2093,6 +2715,22 @@ async function loadAndCheckConfig() {
         } else if (config?.isChecked15 === false) {
             disableQYLhuimu();
             isChecked15 = false;
+        }
+
+        if (config?.isChecked16 === true) {
+            enableQYLinkmode();
+            isChecked16 = true;
+        } else if (config?.isChecked16 === false) {
+            disableQYLinkmode();
+            isChecked16 = false;
+        }
+
+        if (config?.isChecked17 === true) {
+            enableQYLchixia();
+            isChecked17 = true;
+        } else if (config?.isChecked17 === false) {
+            disableQYLchixia();
+            isChecked17 = false;
         }
 
     } catch (e) {
