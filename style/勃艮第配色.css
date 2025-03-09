@@ -75,7 +75,7 @@
 }
 :root {
     --QYL-switch-close: var(--QYL-gray);
-    --QYL-switch-close-background: rgb(48, 41, 41);
+    --QYL-switch-close-background: rgb(93, 82, 82);
     --QYL-input-border: rgb(108, 79, 79);
     --QYL-input-border-hover: var(--b3-theme-primary);
     --b3-switch-checked-background: var(--b3-theme-primary);
@@ -83,7 +83,7 @@
 }
 :root {
     --QYL-filter-background-theme: rgba(22, 15, 15, 0.5);
-    --QYL-filter-wrap-background-theme: rgba(22, 15, 15, 0.6);
+    --QYL-filter-wrap-background-theme: rgba(43, 36, 36, 0.6);
     --QYL-filter-fix-background-theme: rgba(22, 15, 15, 0.8);
 }
 :root {
